@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const getEvents = (query) => {
+// eslint-disable-next-line
+export default {
+getEvents: function() {
   return axios.get("/api/events");
 }
-export default getEvents
+};
