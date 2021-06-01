@@ -1,19 +1,19 @@
 require("dotenv").config();
 const express = require("express");
-const session = require('express-session');
+// const session = require('express-session');
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(session(sess));
+// app.use(session(sess));
 
-const sess = {
-  secret: 'Super secret secret',
-  cookie: {},
-  resave: false,
-  saveUninitialized: true,
-};
+// const sess = {
+//   secret: 'Super secret secret',
+//   cookie: {},
+//   resave: false,
+//   saveUninitialized: true,
+// };
 
 
 // Define middleware here
