@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import API from "../utils/API";
+import CardWrapper from "../components/CardWrapper"
+import Card from "../components/Card"
 
 function Explore() {
   const [events, setEvents] = useState({})
@@ -10,18 +12,37 @@ function Explore() {
   function showState() {
     init()
     console.log("this is the events state: ", events)
-    }
+  }
 
   function init() {
     API.getEvents()
-    .then(res => setEvents(res.data))
-    .catch(err => console.log("Error: ", err))
+      .then(res => setEvents(res.data))
+      .catch(err => console.log("Error: ", err))
   }
 
   return (
     <div>
-      This is the Explore Page!
-      <button onClick={showState}>console</button>
+      <div className="text-center">
+        <h1>Explore</h1>
+        <button onClick={showState}>Show Events!</button>
+      </div>
+      <div>
+        {events.length ?
+          (events.map(event => (
+            (<CardWrapper
+              key={event.id}
+              id={event.id}
+              name={event.name}
+              date={event.dates.start.localDate}
+              image={event.images[4].url}
+              url={event.url}
+            />
+            )))
+          ) : (
+            <div></div>
+          )
+        }
+      </div>
     </div>
   )
 }

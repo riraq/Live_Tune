@@ -9,21 +9,21 @@ function Login() {
   useEffect(() => {
   }, [])
 
-  function showState() {
-    init()
-    console.log("this is the events state: ", events)
-    }
+  // function showState() {
+  //   init()
+  //   console.log("this is the events state: ", events)
+  //   }
 
-  function init() {
-    API.getEvents()
-    .then(res => setEvents(res.data))
-    .catch(err => console.log("Error: ", err))
-  }
+  // function init() {
+  //   API.getEvents()
+  //   .then(res => setEvents(res.data))
+  //   .catch(err => console.log("Error: ", err))
+  // }
   return (
     <div>
     <Loginform />
     <SignUp />
-    <button onClick={showState}>console</button>
+    {/* <button onClick={showState}>console</button> */}
     </div>
   )
 }
