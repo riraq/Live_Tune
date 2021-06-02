@@ -1,6 +1,29 @@
 import React from "react"
+import Login from "../../pages/Login";
 
 function Loginform() {
+  const Login = async (event) => {
+    event.preventDefault();
+
+    // Collect values from the login form
+    const email = document.querySelector('#email-login').value.trim();
+    const password = document.querySelector('#password-login').value.trim();
+
+    if (email && password) {
+        const response = await fetch('/api/users/login', {
+            method: 'POST',
+            body: JSON.stringify({ email, password }),
+            headers: { 'Content-Type': 'application/json' },
+        });
+
+        if (response.ok) {
+            document.location.replace('/profile');
+        } else {
+            alert(response.statusText);
+        }
+    }
+  }
+
   return (
     <div>
       <div class="row" />
@@ -20,7 +43,7 @@ function Loginform() {
                   aria-label="Password" /></label>
             </div>
             <div class="form-group">
-              <button class="btn btn-dark" type="submit">login</button>
+              <button class="btn btn-dark" onClick={Login()} type="submit">login</button>
             </div>
           </form>
         </div>
