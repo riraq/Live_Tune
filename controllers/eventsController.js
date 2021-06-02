@@ -3,9 +3,10 @@ const axios = require("axios")
 
 // Defining methods for the eventsController
 module.exports = {
-  eventSearch: function () {
+  eventSearch: function (req, res) {
     axios.get(process.env.API_URL)
-    .then(res => {return res.data._embedded.events})
+    .then(req => res.json(req.data._embedded.events))
+    .catch(err => res.status(422).json(err));
   },
   // findAll: function(req, res) {
   //   db.Book

@@ -14,8 +14,7 @@ function Login() {
 
   function init() {
     API.getEvents()
-    .then(res => console.log(res))
-    .then(res => setEvents( {...events, res} ))
+    .then(res => setEvents(res.data))
     .catch(err => console.log("Error: ", err))
   }
   return (
