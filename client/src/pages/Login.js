@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import API from "../utils/API";
+import Loginform from "../components/LoginForm";
+import SignUp from "../components/SignupForm"
 
 function Login() {
   const [events, setEvents] = useState({})
@@ -20,8 +22,9 @@ function Login() {
   }
   return (
     <div>
-      This is the Login Page
-      <button onClick={showState}>console</button>
+    <Loginform />
+    <SignUp />
+    <button onClick={showState}>console</button>
     </div>
   )
 }
