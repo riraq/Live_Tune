@@ -5,13 +5,13 @@ const UserContext = React.createContext({
   username: "",
   password: "",
   bio: "",
-  events: { 
+  events: [{ 
     id: "",
     name: "",
     image: "",
     link: "",
     date: "",
-  },
+  }],
 });
 
 export default UserContext;
