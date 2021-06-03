@@ -3,7 +3,6 @@ import Login from "../../pages/Login";
 
 function Loginform() {
   const Login = async (event) => {
-    event.preventDefault();
 
     // Collect values from the login form
     const email = document.querySelector('#email-login').value.trim();
