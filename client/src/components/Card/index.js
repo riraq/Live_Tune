@@ -1,7 +1,6 @@
 import React from "react"
 
 function Card(props) {
-  console.log("this is the card props", props)
   const thumbnail = {
     "width": "100px",
     "height": "100px"

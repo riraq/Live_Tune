@@ -2,7 +2,6 @@ import React from "react"
 import Card from "../Card"
 
 function CardWrapper(props) {
-  console.log("cardwrapper props", props)
   return (
     <div className="container-fluid">
       <Card
