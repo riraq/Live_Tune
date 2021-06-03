@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import API from "../utils/API";
+import UserContext from "../utils/UserContext"
 import Header from "../components/Header"; 
 import VenueCard from "../components/VenueCard"; 
 import Title from "../components/Title"; 
@@ -21,6 +22,8 @@ function Event(props) {
       .catch(err => console.log("Error: ", err))
   }
 
+
+  const { event } = useContext(UserContext);
 
   return (
 

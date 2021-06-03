@@ -1,48 +1,27 @@
 import React from "react"
-import Login from "../../pages/Login";
 
-function Loginform() {
-  const Login = async (event) => {
-
-    // Collect values from the login form
-    const email = document.querySelector('#email-login').value.trim();
-    const password = document.querySelector('#password-login').value.trim();
-
-    if (email && password) {
-        const response = await fetch('/api/users/login', {
-            method: 'POST',
-            body: JSON.stringify({ email, password }),
-            headers: { 'Content-Type': 'application/json' },
-        });
-
-        if (response.ok) {
-            document.location.replace('/profile');
-        } else {
-            alert(response.statusText);
-        }
-    }
-  }
+function LoginForm(props) {
 
   return (
     <div>
-      <div class="row" />
-      <div class="col-md-6" />
-      <div class="card shadow p-3 mb-5 bg-body rounded" id="card">
-        <div class="card-body">
-          <h2 class="card-title">Login</h2>
-          <form class="form login-form">
-            <div class="form-group">
-              <label for="email-login">
-                <input type="text" class="form-control" placeholder="Email Address" id="email-login"
-                  aria-label="Email Address" /></label>
+      <div className="row" />
+      <div className="col-md-6" />
+      <div className="card shadow p-3 mb-5 bg-body rounded" id="card">
+        <div className="card-body">
+          <h2 className="card-title">Login</h2>
+          <form className="form login-form">
+            <div className="form-group">
+              <label>
+                <input type="text" className="form-control" placeholder="Username"
+                  aria-label="Email Address" onChange={props.onChange} name="username" /></label>
             </div>
-            <div class="form-group">
-              <label for="password-login">
-                <input type="password" class="form-control" placeholder="Password" id="password-login"
+            <div className="form-group">
+              <label>
+                <input type="password" className="form-control" placeholder="Password" onChange={props.onChange} name="password"
                   aria-label="Password" /></label>
             </div>
-            <div class="form-group">
-              <button class="btn btn-dark" onClick={Login()} type="submit">login</button>
+            <div className="form-group">
+              <button className="btn btn-dark" type="submit">login</button>
             </div>
           </form>
         </div>
@@ -51,4 +30,4 @@ function Loginform() {
   );
 }
 
-export default Loginform
+export default LoginForm

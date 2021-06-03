@@ -2,7 +2,10 @@ import axios from "axios";
 
 // eslint-disable-next-line
 export default {
-getEvents: function() {
-  return axios.get("/api/events");
-}
+  getEvents: function () {
+    return axios.get("/api/events");
+  },
+  getUser: function (userId) {
+    return axios.get("/api/user/" + userId)
+  }
 };
