@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import API from "../utils/API";
+import UserContext from "../utils/UserContext"
 
 function Event() {
+
+  const { event } = useContext(UserContext);
 
   return (
     <div>

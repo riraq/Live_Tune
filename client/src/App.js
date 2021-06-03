@@ -8,19 +8,6 @@ import UserContext from "./utils/UserContext";
 
 
 function App() {
-  const [userState, setUserState] = useState({
-    email: "",
-    username: "",
-    password: "",
-    bio: "",
-    events: [{ 
-      id: "",
-      name: "",
-      image: "",
-      link: "",
-      date: "",
-    }],
-  })
 
   return (
     <Router>
@@ -29,7 +16,7 @@ function App() {
           <Route exact path="/">
             <Login />
             </Route>
-          <UserContext.Provider value={userState}>
+          <UserContext.Provider value={{}}>
             <Route exact path="/profile">
               <Profile />
             </Route>
