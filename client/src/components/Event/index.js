@@ -1,9 +1,27 @@
-import React from "react"
+import React, { useContext } from "react"
+import UserContext from "../../utils/UserContext"
+import Card from "../Card"
 
-function Event(){
-  return(
+function Event() {
+  const { events } = useContext(UserContext)
+  const renderSavedEvents = (
+    events.map(event => (
+      <Card
+      key={event.id}
+      id={event.id}
+      name={event.name}
+      date={event.date}
+      image={event.image}
+      url={event.url}
+      />
+      )))
+    console.log(renderSavedEvents)
+
+  return (
     <div>
-      <p>Here is where our saved events will show.</p>
+      <h2>
+        {renderSavedEvents}
+      </h2>
     </div>
   );
 }

@@ -1,9 +1,11 @@
-import React from "react"
+import React, { useContext } from "react"
+import UserContext from "../../utils/UserContext"
 
 function Header(){
+  const { username } = useContext(UserContext)
   return(
     <div>
-      <p>user name to display</p>
+      <h1>{username}</h1>
     </div>
   );
 }
