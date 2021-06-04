@@ -7,7 +7,6 @@ function Card(props) {
   }
   return (
     <div className="row m-2">
-
       <div className="col-4">
         <img alt="concert poster" style={thumbnail} src={props.image} />
       </div>
