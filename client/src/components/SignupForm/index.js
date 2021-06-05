@@ -9,14 +9,19 @@ function SignUp(props) {
       <div className="card-body">
         <h2 className="card-title">Sign Up</h2>
         <form className="form signup-form">
-          <div className="form-group">
+        <div className="form-group">
             <label>
-              <input type="text" className="form-control" placeholder="Username" id="email-signup" onChange={props.onChange}
-                aria-label="Email Address" /></label>
+              <input type="text" className="form-control" placeholder="Email" onChange={props.onChange}
+                aria-label="email" /></label>
           </div>
           <div className="form-group">
             <label>
-              <input type="password" className="form-control" placeholder="Password" id="password-signup" onChange={props.onChange}
+              <input type="text" className="form-control" placeholder="Username" onChange={props.onChange}
+                aria-label="username" /></label>
+          </div>
+          <div className="form-group">
+            <label>
+              <input type="password" className="form-control" placeholder="Password" onChange={props.onChange}
                 aria-label="Password" /></label>
           </div>
           <div className="form-group">
