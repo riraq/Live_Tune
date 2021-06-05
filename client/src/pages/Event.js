@@ -1,3 +1,4 @@
+
 import React from "react";
 import Header from "../components/Header"; 
 import VenueCard from "../components/VenueCard"; 
@@ -28,5 +29,4 @@ function Event(props) {
 }
 
 export default Event;
-
 

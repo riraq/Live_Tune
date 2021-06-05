@@ -14,7 +14,7 @@ function LoginForm(props) {
             <div className="form-group">
               <label>
                 <input type="text" className="form-control" placeholder="Username"
-                  aria-label="Email Address" onChange={props.onChange} name="username" /></label>
+                  aria-label="username" onChange={props.onChange} name="username" /></label>
             </div>
             <div className="form-group">
               <label>

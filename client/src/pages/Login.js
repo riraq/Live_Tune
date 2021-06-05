@@ -5,6 +5,7 @@ import "../index.css"
 
 
 function Login() {
+  const [email, setEmail] = useState()
   const [username, setUsername] = useState()
   const [password, setPassword] = useState()
 
@@ -18,8 +19,10 @@ function Login() {
     if (name === "username") {
     setUsername({...username, value}) 
   } else {
-    setPassword({...password, value}) 
+    setPassword({...password, value});
+    setEmail({...email, value})
   } 
+  console.log(email)
   console.log(username)
   console.log(password)
   };
@@ -35,7 +38,10 @@ function Login() {
   //       .catch(err => console.log(err));
   //   }
   // };
+
+
   return (
+
     <div className="container main-landing " >
    
       
@@ -46,6 +52,7 @@ function Login() {
             <SignUp />
             {/* <button onClick={showState}>console</button> */}
         </div>
+
     </div>
   )
 }
