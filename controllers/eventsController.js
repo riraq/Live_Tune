@@ -15,12 +15,15 @@ module.exports = {
   //     .then(dbModel => res.json(dbModel))
   //     .catch(err => res.status(422).json(err));
   // },
-  // findById: function(req, res) {
-  //   db.Book
-  //     .findById(req.params.id)
-  //     .then(dbModel => res.json(dbModel))
-  //     .catch(err => res.status(422).json(err));
-  // },
+  findEvents: function(req, res) {
+    console.log(req.params.search)
+      axios.get("https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&keyword=" + req.params.search + "&" + process.env.API_URL)
+      .then(req => 
+        // console.log(req.data)
+        res.json(req.data._embedded.events)
+        )
+      .catch(err => res.status(422).json(err));
+  },
   // create: function(req, res) {
   //   db.Book
   //     .create(req.body)

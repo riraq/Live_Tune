@@ -12,7 +12,6 @@ function VenueCard(props) {
        <h3>{props.name}</h3>
 
        <img alt="concert poster" src={props.image} />
-       <img alt="concert poster" ={props.image}src />
       </div>
      
 
