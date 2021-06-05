@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import API from "../utils/API";
 import CardWrapper from "../components/CardWrapper"
+
+
 import Card from "../components/Card"
 import {Search, SearchBtn} from "../components/Search";
+
 
 function Explore() {
   const [events, setEvents] = useState({})
