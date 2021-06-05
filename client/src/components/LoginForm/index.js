@@ -2,8 +2,6 @@ import React from "react"
 
 function LoginForm(props) {
 
-    console.log(props)
-
   return (
     <div>
       <div className="row" />

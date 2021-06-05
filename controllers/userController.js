@@ -2,6 +2,14 @@ const db = require("../models");
 import isEmail from 'validator/lib/isEmail';
 
 module.exports = {
+
+    findById: function(req, res) {
+        db.User
+          .findById(req.params.id)
+          .then(dbModel => res.json(dbModel))
+          .catch(err => res.status(422).json(err));
+    },
+
     findOne: function(req, res) {
 
             db.User.findOne({ where: { username: req.body.username } })
@@ -52,12 +60,7 @@ module.exports = {
 //       .then(dbModel => res.json(dbModel))
 //       .catch(err => res.status(422).json(err));
 //   },
-//   findById: function(req, res) {
-//     db.User
-//       .findById(req.params.id)
-//       .then(dbModel => res.json(dbModel))
-//       .catch(err => res.status(422).json(err));
-//   },
+  
 //   create: function(req, res) {
 //     db.User
 //       .create(req.body)
@@ -77,4 +80,3 @@ module.exports = {
 //       .then(dbModel => res.json(dbModel))
 //       .catch(err => res.status(422).json(err));
 //   }
-// };

@@ -6,11 +6,11 @@ getEvents: function() {
   return axios.get("/api/events");
 },
 
-getUsers: function() {
-
+getUser: function (userId) {
+  return axios.get("/api/user/" + userId)
 },
 
-getUser: function(id) {
+getUsers: function() {
 
 },
 
@@ -21,4 +21,4 @@ newUser: function() {
 logoutUser: function() {
 
 },
-};
+}
