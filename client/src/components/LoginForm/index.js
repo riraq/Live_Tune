@@ -1,4 +1,5 @@
 import React from "react"
+import "./style.css"
 
 function LoginForm(props) {
 
@@ -6,9 +7,9 @@ function LoginForm(props) {
     <div>
       <div className="row" />
       <div className="col-md-6" />
-      <div className="card shadow p-3 mb-5 bg-body rounded" id="card">
-        <div className="card-body">
-          <h2 className="card-title">Login</h2>
+      <div id="card">
+          <h1 style={{margin: "1rem"}} >LOG IN</h1>
+         
           <form className="form login-form">
             <div className="form-group">
               <label>
@@ -24,7 +25,7 @@ function LoginForm(props) {
               <button className="btn btn-dark" type="submit">login</button>
             </div>
           </form>
-        </div>
+        
       </div>
     </div>
   );

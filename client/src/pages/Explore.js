@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import API from "../utils/API";
 import CardWrapper from "../components/CardWrapper"
-import Card from "../components/Card"
 
 function Explore() {
   const [events, setEvents] = useState({})

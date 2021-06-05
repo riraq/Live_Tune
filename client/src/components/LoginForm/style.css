@@ -1,0 +1,57 @@
+
+
+#card {
+    border: none;
+}
+
+.form-group input{
+    width: 60vh;
+    background:none;
+    border: none;
+}
+h1{
+    font-family: 'Teko', sans-serif;
+    margin-top:3rem;
+    font-size: 75px;
+}
+
+P{
+color: blue;
+}
+
+input[type=text] {
+    border: none;
+    border-bottom: 4px solid rgb(223, 116, 250);
+    background-color: transparent;
+    font-size: 25px;
+    color: #fa64ff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  input[type=password] {
+    border: none;
+    border-bottom: 4px solid rgb(223, 116, 250);
+    background-color: transparent;
+    font-size: 25px;
+    color: #fa64ff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .form-group button{
+    color: white;
+    font-family: 'Teko', sans-serif;
+    font-size: larger;
+    background-color: rgb(226, 43, 134);
+    margin: 1rem;
+  }
+
+  input:active {
+    background-color: none;
+    border: none;
+  }

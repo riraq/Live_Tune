@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import API from "../utils/API";
 import LoginForm from "../components/LoginForm";
 import SignUp from "../components/SignupForm"
+import "../index.css"
+
 
 function Login() {
   const [username, setUsername] = useState()
@@ -35,12 +36,16 @@ function Login() {
   //   }
   // };
   return (
-    <div>
-    <LoginForm 
-    onChange={handleInputChange}
-    />
-    <SignUp />
-    {/* <button onClick={showState}>console</button> */}
+    <div className="container main-landing " >
+   
+      
+        <div className="container login">
+            <LoginForm 
+            onChange={handleInputChange}
+            />
+            <SignUp />
+            {/* <button onClick={showState}>console</button> */}
+        </div>
     </div>
   )
 }

@@ -5,9 +5,8 @@ function SignUp() {
     <div>
       <div className="row" />
       <div className="col-md-6" />
-    <div className="card shadow p-3 mb-5 bg-body rounded">
-      <div className="card-body">
-        <h2 className="card-title">Sign Up</h2>
+
+        <h1 style={{margin: "1rem"}} >CREATE ACCOUNT!</h1>
         <form className="form signup-form">
           <div className="form-group">
             <label>
@@ -25,12 +24,11 @@ function SignUp() {
                 aria-label="Password" /></label>
           </div>
           <div className="form-group">
-            <button className="btn btn-dark" type="submit">Sign Up</button>
+            <button className="btn btn-dark" type="submit">SIGN UP</button>
           </div>
         </form>
       </div>
-    </div>
-  </div>
+  
   );
 }
 
