@@ -1,6 +1,6 @@
 import React from "react"
 
-function SignUp() {
+function SignUp(props) {
   return (
     <div>
       <div className="row" />
@@ -11,17 +11,12 @@ function SignUp() {
         <form className="form signup-form">
           <div className="form-group">
             <label>
-              <input type="text" className="form-control" placeholder="Full Name" id="name-signup"
+              <input type="text" className="form-control" placeholder="Username" id="email-signup" onChange={props.onChange}
                 aria-label="Email Address" /></label>
           </div>
           <div className="form-group">
             <label>
-              <input type="text" className="form-control" placeholder="Email Address" id="email-signup"
-                aria-label="Email Address" /></label>
-          </div>
-          <div className="form-group">
-            <label>
-              <input type="password" className="form-control" placeholder="Password" id="password-signup"
+              <input type="password" className="form-control" placeholder="Password" id="password-signup" onChange={props.onChange}
                 aria-label="Password" /></label>
           </div>
           <div className="form-group">

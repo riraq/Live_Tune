@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useContext } from "react";
 import API from "../utils/API";
 import UserContext from "../utils/UserContext"
@@ -50,5 +51,4 @@ function Event(props) {
 }
 
 export default Event;
-
 

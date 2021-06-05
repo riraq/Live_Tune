@@ -39,7 +39,9 @@ function Login() {
     <LoginForm 
     onChange={handleInputChange}
     />
-    <SignUp />
+    <SignUp 
+    onChange={handleInputChange}
+    />
     {/* <button onClick={showState}>console</button> */}
     </div>
   )
