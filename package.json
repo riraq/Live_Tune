@@ -29,6 +29,8 @@
     "express-session": "^1.17.2",
     "gh-pages": "^3.1.0",
     "if-env": "^1.0.4",
-    "mongoose": "^5.3.16"
+    "install": "^0.13.0",
+    "mongoose": "^5.3.16",
+    "validator-js": "^0.2.1"
   }
 }
