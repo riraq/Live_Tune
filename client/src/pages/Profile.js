@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Bio from "../components/Bio";
 import Event from "../components/Event";
 import UserContext from "../utils/UserContext"
+import { Link } from "react-router-dom";
 
 function Profile() {
   const [userState, setUserState] = useState({
@@ -27,9 +28,9 @@ function Profile() {
 
   function loadUser() {
     API.getUser(userState._id)
-    .then((res) => {
-      setUserState(res.data);
-    });
+      .then((res) => {
+        setUserState(res.data);
+      });
 
   }
 
@@ -38,6 +39,9 @@ function Profile() {
       <div className="container">
         <UserContext.Provider value={userState}>
           <Header />
+          <Link to={"/explore"}>
+            <button><strong>Explore Page</strong></button>
+          </Link>
           <Bio />
           <Event />
         </UserContext.Provider>

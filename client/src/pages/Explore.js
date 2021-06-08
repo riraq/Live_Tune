@@ -1,32 +1,21 @@
 import React, { useState, useEffect } from "react";
 import API from "../utils/API";
-import CardWrapper from "../components/CardWrapper"
 import Card from "../components/Card"
-import {Search, SearchBtn} from "../components/Search";
+import { Search, SearchBtn } from "../components/Search";
+import { Link } from "react-router-dom";
 
 function Explore() {
-  const [events, setEvents] = useState({})
-  const [searchForm, setsearchForm] = useState({})
+  const [events, setEvents] = useState({});
+  const [searchForm, setsearchForm] = useState({});
 
   useEffect(() => {
-  }, [])
-
-  function showState() {
-    searchEvents()
-    console.log("this is the events state: ", events)
-  }
-
-  function searchEvents() {
-    API.getEvents()
-      .then(res => setEvents(res.data))
-      .catch(err => console.log("Error: ", err))
-  }
+  }, []);
 
   function handleInputChange(event) {
     const { name, value } = event.target;
     setsearchForm({ [name]: value })
   };
-  
+
   function handleFormSubmit(event) {
     event.preventDefault();
     if (searchForm.search) {
@@ -40,7 +29,10 @@ function Explore() {
     <div>
       <div className="text-center">
         <h1>Explore</h1>
-        <form>
+        <Link to={"/profile"}>
+          <button><strong>Profile Page</strong></button>
+        </Link>
+        <form className="form-group">
           <Search
             onChange={handleInputChange}
             name="search"
@@ -55,20 +47,21 @@ function Explore() {
         </form>
       </div>
       <div>
-        {events.length ?
+        {events.length ? (
           (events.map(event => (
-            (<CardWrapper
+            <Card
               key={event.id}
               id={event.id}
               name={event.name}
               date={event.dates.start.localDate}
               image={event.images[4].url}
               url={event.url}
-            />
-            )))
-          ) : (
-            <div></div>
-          )
+            >
+            </Card>
+          )))
+        ) : (
+          <div></div>
+        )
         }
       </div>
     </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
@@ -15,17 +15,17 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Login />
-            </Route>
+          </Route>
           <UserContext.Provider value={{}}>
             <Route exact path="/profile">
               <Profile />
             </Route>
-            <Route exact path="/explore">
-              <Explore />
-            </Route>
-            <Route exact path="/event">
-              <Event />
-            </Route>
+              <Route exact path="/explore">
+                <Explore />
+              </Route>
+              <Route exact path="/events/:id">
+                <Event />
+              </Route>
           </UserContext.Provider>
         </Switch>
       </div>

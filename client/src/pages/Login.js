@@ -12,15 +12,12 @@ function Login() {
   // }, [])
 
   function handleInputChange(event) {
-    console.log(event)
     const {name, value} = event.target;
     if (name === "username") {
     setUsername({...username, value}) 
   } else {
     setPassword({...password, value}) 
   } 
-  console.log(username)
-  console.log(password)
   };
 
   // function handleFormSubmit(event) {
