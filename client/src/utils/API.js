@@ -13,6 +13,13 @@ export default {
   },
   saveEvent: function (eventDetails) {
     console.log("eventDetails: ", eventDetails)
-    return axios.post ("/api/user/", eventDetails).then(result => result.data)
-  }
-};
+    return axios.post("/api/user/", eventDetails).then(result => result.data)
+  },
+  newUser: function () {
+
+  },
+
+  logoutUser: function () {
+
+  },
+}

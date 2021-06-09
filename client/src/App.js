@@ -6,6 +6,7 @@ import Profile from "./pages/Profile";
 import Explore from "./pages/Explore";
 import Event from "./pages/Event";
 import UserContext from "./utils/UserContext";
+import "./index.css"
 
 
 function App() {
@@ -39,7 +40,7 @@ function App() {
   }
   return (
     <Router>
-      <div>
+      <div className="container main">
         <Switch>
           <Route exact path="/">
             <Login />

@@ -5,6 +5,7 @@ import Card from "../components/Card"
 import { Search, SearchBtn } from "../components/Search";
 import { Link } from "react-router-dom";
 
+
 function Explore() {
   const [events, setEvents] = useState({});
   const [searchForm, setsearchForm] = useState({});
