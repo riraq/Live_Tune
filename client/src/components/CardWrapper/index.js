@@ -3,7 +3,7 @@ import Card from "../Card"
 
 function CardWrapper(props) {
   return (
-    <div className="container-fluid">
+    <div>
       <Card
               key={props.id}
               id={props.id}

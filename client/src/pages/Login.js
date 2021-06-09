@@ -1,4 +1,7 @@
+// eslint-disable-next-line 
 import React, { useState, useEffect } from "react";
+// eslint-disable-next-line 
+import API from "../utils/API";
 import LoginForm from "../components/LoginForm";
 import SignUp from "../components/SignupForm"
 import "../index.css"
@@ -14,7 +17,6 @@ function Login() {
   // }, [])
 
   function handleInputChange(event) {
-    console.log(event)
     const {name, value} = event.target;
     if (name === "username") {
     setUsername({...username, value}) 

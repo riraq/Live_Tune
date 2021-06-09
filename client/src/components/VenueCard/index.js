@@ -9,12 +9,9 @@ function VenueCard(props) {
   return (
     <div className="row m-2">
       <div className="col-8" style={banner} >
-       <h3>{props.name}</h3>
-
-       <img alt="concert poster" src={props.image} />
+        <h3>{props.name}</h3>
+        <img alt="concert poster" src={props.image} />
       </div>
-     
-
     </div>
   );
 }

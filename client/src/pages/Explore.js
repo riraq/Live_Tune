@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from "react";
+// eslint-disable-next-line 
+import React, { useState, useEffect, useContext } from "react";
 import API from "../utils/API";
+
 import CardWrapper from "../components/CardWrapper";
 import styles from '../styles.modules.css';
 
@@ -13,12 +15,14 @@ import {
 } from '@react-spring/web';
 
 import Card from "../components/Card"
-import {Search, SearchBtn} from "../components/Search";
+import { Search, SearchBtn } from "../components/Search";
+import { Link } from "react-router-dom";
 
 
 
 
 function Explore() {
+
   const [events, setEvents] = useState({})
   const [searchForm, setsearchForm] = useState({})
  
@@ -70,11 +74,18 @@ function Explore() {
       .catch(err => console.log("Error: ", err))
   }
 
+  const [events, setEvents] = useState({});
+  const [searchForm, setsearchForm] = useState({});
+
+  useEffect(() => {
+  }, []);
+
+
   function handleInputChange(event) {
     const { name, value } = event.target;
     setsearchForm({ [name]: value })
   };
-  
+
   function handleFormSubmit(event) {
     event.preventDefault();
     if (searchForm.search) {
@@ -90,7 +101,10 @@ function Explore() {
       
       <div className="text-center">
         <h1>Explore</h1>
-        <form>
+        <Link to={"/profile"}>
+          <button><strong>Profile Page</strong></button>
+        </Link>
+        <form className="form-group">
           <Search
             onChange={handleInputChange}
             name="search"
@@ -117,19 +131,24 @@ function Explore() {
         ))}
 
       {events.length ?
+
+      <div>
+        {events.length ? (
+
           (events.map(event => (
-            (<CardWrapper
+            <Card
               key={event.id}
               id={event.id}
               name={event.name}
               date={event.dates.start.localDate}
               image={event.images[4].url}
               url={event.url}
-            />
-            )))
-          ) : (
-            <div></div>
-          )
+            >
+            </Card>
+          )))
+        ) : (
+          <div></div>
+        )
         }
 
       </animated.div>
