@@ -15,7 +15,6 @@ function Event() {
       url={event.url}
       />
       )))
-    console.log(renderSavedEvents)
 
   return (
     <div>

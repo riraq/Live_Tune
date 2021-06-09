@@ -2,10 +2,11 @@ const router = require("express").Router();
 const userController = require("../../controllers/userController");
 
 // Matches with "/api/user"
-// router.route("/")
-//   .get(userController.eventSearch)
+router
+  .route("/")
+  // .get(userController.eventSearch)
   // .get(eventsController.findAll)
-  // .post(eventsController.create);
+  .post(userController.update);
 
 // Matches with "/api/users/:id"
 router
