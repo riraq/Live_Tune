@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import API from "./utils/API";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
@@ -8,7 +9,34 @@ import UserContext from "./utils/UserContext";
 
 
 function App() {
+  const [userState, setUserState] = useState({
+    _id: "60bfcc1d7456621eb80c4824",
+    email: "",
+    username: "",
+    password: "",
+    bio: "",
+    events: [{
+      id: "",
+      name: "",
+      image: "",
+      link: "",
+      date: "",
+    }],
+  })
 
+  useEffect(() => {
+    loadUser()
+    console.log("userState", userState)
+  // eslint-disable-next-line 
+}, []);
+
+  function loadUser() {
+    API.getUser(userState._id)
+      .then((res) => {
+        setUserState(res.data);
+      })
+      .catch(err => console.log(err));
+  }
   return (
     <Router>
       <div>
@@ -16,7 +44,7 @@ function App() {
           <Route exact path="/">
             <Login />
           </Route>
-          <UserContext.Provider value={{}}>
+          <UserContext.Provider value={userState}>
             <Route exact path="/profile">
               <Profile />
             </Route>

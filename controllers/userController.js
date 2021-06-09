@@ -16,22 +16,22 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   // create: function (req, res) {
-  //   // console.log("create function in userController - req: ", req.body)
+  //   console.log("create function in userController - req: ", req.body)
   //   db.User
   //     .create(req.body)
-  //     .then(dbModel => {
-  //       console.log("dbModel", dbModel);
-  //       res.json(dbModel)
-  //     })
+  //     .then(dbModel => res.json(dbModel))
   //     .catch(err => res.status(422).json(err));
   // },
-    update: function(req, res) {
-      console.log("req in update function", req)
-      db.User
-        .findOneAndUpdate({ _id: req.params.id }, req.body)
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
-    },
+  update: function (req, res) {
+    console.log(req.body)
+    db.User
+      .findByIdAndUpdate({ _id: req.body._id }, {$push: {events: req.body}})
+      .then(dbModel => {
+        res.json(dbModel)
+        console.log("dbModel", dbModel)
+      })
+      .catch(err => res.status(422).json(err));
+  },
   //   remove: function(req, res) {
   //     db.User
   //       .findById({ _id: req.params.id })

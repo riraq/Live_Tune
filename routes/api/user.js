@@ -6,7 +6,7 @@ router
   .route("/")
   // .get(userController.eventSearch)
   // .get(eventsController.findAll)
-  .put(userController.update);
+  .post(userController.update);
 
 // Matches with "/api/users/:id"
 router

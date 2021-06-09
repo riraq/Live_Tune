@@ -10,28 +10,44 @@ import UserContext from "../utils/UserContext"
 function Event() {
   const [eventDetails, setEvents] = useState({})
   const [venueDetails, setVenue] = useState({})
+  const [userState, setUserState] = useState({})
 
   const { _id } = useContext(UserContext)
   const { id } = useParams()
 
   useEffect(() => {
+    loadEvent();
+    loadUser();
+    // eslint-disable-next-line 
+  }, [])
+
+  function loadEvent() {
     API.getEvent(id)
       .then(res => {
         setEvents(res.data);
         setVenue(res.data._embedded.venues[0])
       })
-      .catch(err => console.log("errrrrr", err));
-  }, [])
+      .catch(err => console.log(err));
+  }
+
+  function loadUser() {
+    API.getUser(_id)
+      .then((res) => {
+        setUserState(res.data);
+      })
+      .catch(err => console.log(err));
+  }
 
   const consoleClick = () => {
     console.log("eventDetails: ", eventDetails)
     console.log("venueDetails: ", venueDetails)
+    console.log("userState: ", userState)
   }
 
   function handleEventSave(event) {
     event.preventDefault();
-    console.log(eventDetails)
-    console.log(_id)
+    console.log("eventDetails", eventDetails)
+    console.log("_id", _id)
     API.saveEvent({
       _id: _id,
       id: eventDetails.id,
@@ -46,7 +62,6 @@ function Event() {
 
   return (
     <div>
-      <Header />
       <div className="text-center">
         <Title> {eventDetails.name} </Title>
         <h2>{venueDetails.name}</h2>

@@ -1,50 +1,55 @@
-import React, { useState, useEffect } from "react";
-import API from "../utils/API";
+import React, { useState, useEffect, useContext } from "react";
 import Header from "../components/Header";
 import Bio from "../components/Bio";
-import Event from "../components/Event";
+import Card from "../components/Card";
 import UserContext from "../utils/UserContext"
 import { Link } from "react-router-dom";
 
 function Profile() {
-  const [userState, setUserState] = useState({
-    _id: "60b936e4aefb992fa8a127bb",
-    email: "",
-    username: "",
-    password: "",
-    bio: "",
-    events: [{
-      id: "",
-      name: "",
-      image: "",
-      link: "",
-      date: "",
-    }],
-  })
+  const [eventsState, setEvents] = useState({});
+
+  const { events } = useContext(UserContext)
 
   useEffect(() => {
-    loadUser()
+    setEvents({events});
+    console.log("eventsState", eventsState)
+    console.log(events)
+    // eslint-disable-next-line 
   }, []);
 
-  function loadUser() {
-    API.getUser(userState._id)
-      .then((res) => {
-        setUserState(res.data);
-      });
 
+  function consoleClick() {
+    console.log("eventsState", eventsState)
+    console.log("events", events)
   }
 
   return (
     <div>
       <div className="container">
-        <UserContext.Provider value={userState}>
-          <Header />
-          <Link to={"/explore"}>
-            <button><strong>Explore Page</strong></button>
-          </Link>
-          <Bio />
-          <Event />
-        </UserContext.Provider>
+        <button onClick={consoleClick}>Console</button>
+        <Header />
+        <Link to={"/explore"}>
+          <button><strong>Explore Page</strong></button>
+        </Link>
+        <Bio />
+        <div>
+          {events.length ? (
+            (events.map(event => (
+              <Card
+                key={event.id}
+                id={event.id}
+                name={event.name}
+                date={event.date}
+                image={event.image}
+                url={event.url}
+              >
+              </Card>
+            )))
+          ) : (
+            <div></div>
+          )
+          }
+        </div>
       </div>
     </div>
   )

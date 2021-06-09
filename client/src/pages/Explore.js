@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+// eslint-disable-next-line 
+import React, { useState, useEffect, useContext } from "react";
 import API from "../utils/API";
 import Card from "../components/Card"
 import { Search, SearchBtn } from "../components/Search";
