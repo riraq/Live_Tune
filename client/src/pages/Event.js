@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 // import UserContext from "../utils/UserContext"
-import Header from "../components/Header";
+// import Header from "../components/Header";
 // import VenueCard from "../components/VenueCard"; 
 import Title from "../components/Title";
 import { useParams } from "react-router-dom";
@@ -18,7 +18,6 @@ function Event() {
   useEffect(() => {
     loadEvent();
     loadUser();
-    // eslint-disable-next-line 
   }, [])
 
   function loadEvent() {
@@ -46,8 +45,6 @@ function Event() {
 
   function handleEventSave(event) {
     event.preventDefault();
-    console.log("eventDetails", eventDetails)
-    console.log("_id", _id)
     API.saveEvent({
       _id: _id,
       id: eventDetails.id,

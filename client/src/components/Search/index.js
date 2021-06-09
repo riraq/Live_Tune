@@ -2,7 +2,7 @@ import React from "react"
 
 function Search(props){
   return(
-      <input className="form-control w-50" {...props} />
+      <input className="form-control w-50 border border-info" {...props} />
   );
 }
 

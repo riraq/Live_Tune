@@ -14,7 +14,6 @@ function Profile() {
     setEvents({events});
     console.log("eventsState", eventsState)
     console.log(events)
-    // eslint-disable-next-line 
   }, []);
 
 

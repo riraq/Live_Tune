@@ -1,6 +1,6 @@
+/* eslint-disable import/no-anonymous-default-export */
 import axios from "axios";
 
-// eslint-disable-next-line
 export default {
   getEvents: function (search) {
     return axios.get("/api/events/" + search);
@@ -12,14 +12,10 @@ export default {
     return axios.get("/api/event/" + id);
   },
   saveEvent: function (eventDetails) {
-    console.log("eventDetails: ", eventDetails)
     return axios.post("/api/user/", eventDetails).then(result => result.data)
   },
-  newUser: function () {
-
-  },
-
-  logoutUser: function () {
-
-  },
+  // newUser: function () {
+  // },
+  // logoutUser: function () {
+  // },
 }
