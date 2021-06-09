@@ -1,14 +1,14 @@
 const router = require('express').Router();
-const userController = require("../../controllers/usersController")
+const userController = require('../../controllers/userController');
 
-router.route("/")
-.post(userController.findOne)
-.post(userController.create)
+router.route('/')
+// .post(userController.findOne)
+// .post(userController.create);
 
 router
-.route("/:id")
-.get(userController.findById)
-.post(userController.destroy)
+  .route('/:id')
+  .get(userController.findById)
+// .post(userController.destroy);
 
 module.exports = router;
 

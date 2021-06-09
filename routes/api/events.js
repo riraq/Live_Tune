@@ -1,5 +1,5 @@
-const router = require("express").Router();
-const eventsController = require("../../controllers/eventsController");
+const router = require('express').Router();
+const eventsController = require('../../controllers/eventsController');
 
 // Matches with "/api/events"
 // router.route("/")
@@ -9,12 +9,12 @@ const eventsController = require("../../controllers/eventsController");
 
 // Matches with "/api/events/:search"
 router
-  .route("/:search")
-  .get(eventsController.findEvents)
+  .route('/:search')
+  .get(eventsController.findEvents);
 
 router
-  .route("/:id")
-  .get(eventsController.findEvent)
+  .route('/:id')
+  .get(eventsController.findEvent);
 //   .put(eventsController.update)
 //   .delete(eventsController.remove);
 

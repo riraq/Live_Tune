@@ -1,17 +1,17 @@
-const router = require("express").Router();
-const userController = require("../../controllers/userController");
+const router = require('express').Router();
+const userController = require('../../controllers/userController');
 
 // Matches with "/api/user"
 router
-  .route("/")
+  .route('/')
   // .get(userController.eventSearch)
   // .get(eventsController.findAll)
   .post(userController.update);
 
 // Matches with "/api/users/:id"
 router
-  .route("/:id")
-  .get(userController.findById)
+  .route('/:id')
+  .get(userController.findById);
 //   .put(eventsController.update)
 //   .delete(eventsController.remove);
 

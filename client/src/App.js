@@ -28,7 +28,6 @@ function App() {
   useEffect(() => {
     loadUser()
     console.log("userState", userState)
-  // eslint-disable-next-line 
 }, []);
 
   function loadUser() {
