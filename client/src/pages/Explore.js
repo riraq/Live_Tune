@@ -37,6 +37,7 @@ function Explore() {
   })
 
 
+
   const transApi = useSpringRef()
   const transition = useTransition(open ? events : [], {
     ref: transApi,
