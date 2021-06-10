@@ -13,6 +13,11 @@ const userSchema = new Schema({
     link: { type: String },
     date: { type: Date },
   }],
+  roles: [
+    {type: mongoose.Schema.Types.ObjectId,
+      ref: "Role"
+    }
+  ]
 });
 
 const User = mongoose.model("User", userSchema);

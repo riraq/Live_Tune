@@ -4,8 +4,12 @@ import Header from "../components/Header";
 import Bio from "../components/Bio";
 import Event from "../components/Event";
 import UserContext from "../utils/UserContext"
+import AuthService from "../services/auth-service";
+
 
 function Profile() {
+  const currentUser = AuthService.getCurrentUser();
+
   const [userState, setUserState] = useState({
     _id: "60b936e4aefb992fa8a127bb",
     email: "",

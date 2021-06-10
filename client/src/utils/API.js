@@ -10,8 +10,8 @@ getUser: function (userId) {
   return axios.get("/api/user/" + userId)
 },
 
-getUsers: function() {
-
+getUsers: function(username, password) {
+  return axios.get("/api/login/", username, password)
 },
 
 newUser: function() {
@@ -22,3 +22,4 @@ logoutUser: function() {
 
 },
 }
+

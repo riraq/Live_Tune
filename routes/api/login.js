@@ -1,31 +1,23 @@
-const router = require('express').Router();
-const userController = require("../../controllers/usersController")
+const { verifySignUp } = require("../../middlewares");
+const controller = require("../../controllers/auth");
 
-router.route("/")
-.post(userController.findOne)
-.post(userController.create)
+module.exports = function(app) {
+  app.use(function(req, res, next) {
+    res.header(
+      "Access-Control-Allow-Headers",
+      "x-access-token, Origin, Content-Type, Accept"
+    );
+    next();
+  });
 
-router
-.route("/:id")
-.get(userController.findById)
-.post(userController.destroy)
+  app.post(
+    "/api/auth/signup",
+    [
+      verifySignUp.checkDuplicateUsernameOrEmail,
+      verifySignUp.checkRolesExisted
+    ],
+    controller.signup
+  );
 
-module.exports = router;
-
-
-// router.get('/', async (req, res) => {
-//     if (req.session.logged_in) {
-//         res.redirect('/dashboard');
-//         return;
-//     }
-//     res.render('login');
-// });
-
-// router.get('/login', (req, res) => {
-//     if (req.session.logged_in) {
-//         res.redirect('/dashboard');
-//         return;
-//     }
-
-//     res.render('login');
-// });
+  app.post("/api/auth/signin", controller.signin);
+};
