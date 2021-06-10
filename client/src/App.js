@@ -6,6 +6,7 @@ import Profile from "./pages/Profile";
 import Explore from "./pages/Explore";
 import Event from "./pages/Event";
 import UserContext from "./utils/UserContext";
+import { Frame, Scroll, useCycle } from "framer"
 import "./index.css"
 
 
