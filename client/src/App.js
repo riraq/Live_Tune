@@ -8,6 +8,7 @@ import Event from "./pages/Event";
 import PrivateRoute from "./pages/PrivateRoute";
 import GuestRoute from "./pages/GuestRoute";
 import UserContext from "./utils/UserContext";
+import { Frame, Scroll, useCycle } from "framer"
 import "./index.css"
 import { useAuthTokenStore } from "./utils/auth";
 
