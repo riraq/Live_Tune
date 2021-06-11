@@ -5,13 +5,18 @@ import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Explore from "./pages/Explore";
 import Event from "./pages/Event";
+import PrivateRoute from "./pages/PrivateRoute";
+import GuestRoute from "./pages/GuestRoute";
 import UserContext from "./utils/UserContext";
 import "./index.css"
-
+import { useAuthTokenStore } from "./utils/auth";
 
 function App() {
+  // Reauthenticates stored tokens
+  useAuthTokenStore();
+
   const [userState, setUserState] = useState({
-    _id: "60bfcc1d7456621eb80c4824",
+    _id: "",
     email: "",
     username: "",
     password: "",
@@ -25,36 +30,32 @@ function App() {
     }],
   })
 
-  useEffect(() => {
-    loadUser()
-    console.log("userState", userState)
-}, []);
+  // useEffect(() => {
+  //   loadUser()
+  //   console.log("userState", userState)
+  // }, []);
 
-  function loadUser() {
-    API.getUser(userState._id)
-      .then((res) => {
-        setUserState(res.data);
-      })
-      .catch(err => console.log(err));
-  }
+  // function loadUser() {
+  //   API.getUser(userState._id)
+  //     .then((res) => {
+  //       setUserState(res.data);
+  //     })
+  //     .catch(err => console.log(err));
+  // }
+
   return (
     <Router>
       <div className="container main">
         <Switch>
-          <Route exact path="/">
-            <Login />
-          </Route>
+          <Route exact path="/" component={Login} />
+          <GuestRoute exact path="/" redirectTo="/profile" component={Login} />
+
           <UserContext.Provider value={userState}>
-            <Route exact path="/profile">
-              <Profile />
-            </Route>
-              <Route exact path="/explore">
-                <Explore />
-              </Route>
-              <Route exact path="/events/:id">
-                <Event />
-              </Route>
+            <PrivateRoute exact path="/profile" redirectTo="/" component={Profile} />
+            <PrivateRoute exact path="/explore" redirectTo="/" component={Explore} />
+            <PrivateRoute exact path="/events/:id" redirectTo="/" component={Event} />
           </UserContext.Provider>
+          <Route redirectTo="/" component={Login} />
         </Switch>
       </div>
     </Router>

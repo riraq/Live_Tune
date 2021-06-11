@@ -1,14 +1,14 @@
 const router = require('express').Router();
 const userController = require('../../controllers/userController');
 
-// Matches with "/api/login"
+// Matches with "/api/registration"
 router.route('/')
-  .post(userController.findOne);
+  .post(userController.register);
 // .post(userController.create);
 
-// router
-//   .route('/:id')
-//   .get(userController.findById);
+router
+  .route('/:id')
+  .get(userController.findById);
 // .post(userController.destroy);
 
 module.exports = router;

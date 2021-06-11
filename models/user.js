@@ -13,6 +13,10 @@ const userSchema = new Schema({
     link: { type: String },
     date: { type: Date },
   }],
+  date: {
+    type: Date,
+    default: Date.now
+  }
 });
 
 const User = mongoose.model('User', userSchema);

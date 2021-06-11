@@ -6,15 +6,11 @@ const routes = require('./routes');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// app.use(session(sess));
+const passport = require('passport');
 
-// const sess = {
-//   secret: 'Super secret secret',
-//   cookie: {},
-//   resave: false,
-//   saveUninitialized: true,
-// };
-
+app.use(passport.initialize());
+// Passport config
+passport.use(require('./config/jwtPassportStrategy'));
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -25,6 +21,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 // Add routes, both API and view
 app.use(routes);
+app.use( '/api', require('./routes/authentication') );
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/liveTuneUsers',
@@ -36,6 +33,6 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/liveTuneUsers',
   });
 
 // Start the API server
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
