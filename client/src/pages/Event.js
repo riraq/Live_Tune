@@ -1,7 +1,4 @@
 import React, { useState, useEffect, useContext } from "react";
-// import UserContext from "../utils/UserContext"
-// import Header from "../components/Header";
-// import VenueCard from "../components/VenueCard"; 
 import Title from "../components/Title";
 import { useParams } from "react-router-dom";
 import API from "../utils/API";
@@ -37,12 +34,6 @@ function Event() {
       .catch(err => console.log(err));
   }
 
-  const consoleClick = () => {
-    console.log("eventDetails: ", eventDetails)
-    console.log("venueDetails: ", venueDetails)
-    console.log("userState: ", userState)
-  }
-
   function handleEventSave(event) {
     event.preventDefault();
     API.saveEvent({
@@ -62,7 +53,6 @@ function Event() {
       <div className="text-center">
         <Title> {eventDetails.name} </Title>
         <h2>{venueDetails.name}</h2>
-        <button onClick={consoleClick}>Console</button>
         <button onClick={handleEventSave}>Save Event</button>
       </div>
     </div>

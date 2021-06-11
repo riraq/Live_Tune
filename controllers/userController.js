@@ -17,15 +17,29 @@ module.exports = {
   },
 
   findOne: function (req, res) {
-    console.log('req', req.body);
     db.User
       .find({ email: req.body.email })
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+      .then(dbModel => {
+        res.json(dbModel);
+      })
+      .catch(err => {
+        res.status(422).json(err);
+      });
   },
 
+  findUser: function (req, res) {
+    db.User
+      .find({ email: req.params.email })
+      .then(dbModel => {
+        res.json(dbModel);
+      })
+      .catch(err => {
+        res.status(422).json(err);
+      });
+  },
+
+
   register: function (req, res) {
-    console.log('register req', req.body);
     db.User
       .create(req.body)
       .then(dbModel => res.json(dbModel))

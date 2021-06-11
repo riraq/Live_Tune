@@ -4,51 +4,28 @@ import Bio from "../components/Bio";
 import Card from "../components/Card";
 import Nav from "../components/Nav"
 import UserContext from "../utils/UserContext"
-import { Link } from "react-router-dom";
-import LogoutButton from "../components/LogoutButton";
 
 function Profile() {
-  const [eventsState, setEvents] = useState({});
-
-  const { events } = useContext(UserContext)
+  const { userState } = useContext(UserContext)
+  console.log('userState in Profile: ', userState)
+  const [profileState, setProfileState] = useState({})
 
   useEffect(() => {
-    setEvents({ events });
-    console.log("eventsState", eventsState)
-    console.log(events)
+    setProfileState({ ...userState })
+    console.log('userState useEffect profile', profileState)
   }, []);
-
-
-  function consoleClick() {
-    console.log("eventsState", eventsState)
-    console.log("events", events)
-  }
 
   return (
     <div>
       <Nav />
       <div className="container">
-        <button onClick={consoleClick}>Console</button>
-
         <Header />
-<<<<<<< HEAD
 
-        <Link to={"/explore"}>
-          <button><strong>Explore Page</strong></button>
-        </Link>
-
-        <LogoutButton />
-
-=======
-        {/* <Link to={"/explore"}>
-          <button><strong>Explore Page</strong></button>
-        </Link> */}
->>>>>>> main
         <Bio />
 
         <div>
-          {events.length ? (
-            (events.map(event => (
+          {profileState.state ? (
+            (profileState.state[0].events.map(event => (
               <Card
                 key={event.id}
                 id={event.id}

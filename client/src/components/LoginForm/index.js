@@ -1,28 +1,31 @@
-import React, { useRef } from "react"
-import { useLogin } from "../../utils/auth"
-import "./style.css"
+import React, { useRef, useState, useEffect, useContext } from "react";
+import API from "../../utils/API";
+import { useLogin } from "../../utils/auth";
+import "./style.css";
+import { useHistory } from "react-router-dom";
+import UserContext from "../../utils/UserContext";
 
 function LoginForm() {
-
+  const { userState, loginState } = useContext(UserContext)
+  const history = useHistory();
   const emailRef = useRef();
   const passwordRef = useRef();
 
   const login = useLogin();
 
-  const handleSubmit = async e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
 
-    console.log(email, password)
-
-    try {
-      await login({ email, password });
-      // User has been successfully logged in and added to state. Perform any additional actions you need here such as redirecting to a new page.
-    } catch (err) {
-      // Handle error responses from the API
-      if (err.response && err.response.data) console.log(err.response.data);
-    }
+    login({ email, password })
+      .then(API.getUser(email)
+        .then(res => loginState(res.data))
+        .then(res => console.log('userState: ', userState))
+        .then(res => history.push("/profile"))
+        )
+      .catch(err => console.log(err))
+    // Handle error responses from the API
   }
 
   return (

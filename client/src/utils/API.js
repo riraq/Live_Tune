@@ -26,7 +26,6 @@ class API {
      * @returns {Promise}
      */
     register(userData) {
-        console.log("userData, register API", userData)
         return this.axios.post("/api/register", userData);
     }
 
@@ -39,7 +38,6 @@ class API {
      * @returns {Promise}
      */
     login(userData) {
-        console.log("userData, login API", userData)
         return this.axios.post("/api/login", userData);
     }
 
@@ -51,8 +49,8 @@ class API {
         return this.axios.get("/api/events/" + search);
     }
 
-    getUser(id) {
-        return this.axios.get("/api/user/" + id)
+    getUser(email) {
+        return this.axios.get("/api/user/" + email)
     }
 
     getEvent(id) {

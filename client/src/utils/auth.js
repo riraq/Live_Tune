@@ -96,9 +96,7 @@ export const useAuthenticatedUser = () => {
 
 export const useLogin = () => {
     const [ ,dispatch ] = useStoreContext();
-    console.log("dispatch", dispatch)
     return async ( credentials ) => {
-        console.log("credentials", credentials)
         const { data: { token: tokenString, user } } = await API.login( credentials );
         const token = setAuthToken( tokenString );
         dispatch({ type: LOGIN_USER, payload: { token, user } });
