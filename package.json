@@ -48,7 +48,12 @@
     "if-env": "^1.0.4",
     "install": "^0.13.0",
     "mongoose": "^5.3.16",
+<<<<<<< HEAD
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0"
+=======
+    "react-edit-text": "^4.0.3",
+    "validator-js": "^0.2.1"
+>>>>>>> main
   }
 }

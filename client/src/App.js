@@ -17,7 +17,11 @@ function App() {
   useAuthTokenStore();
 
   const [userState, setUserState] = useState({
+<<<<<<< HEAD
     _id: "",
+=======
+    _id: "vvG1zZpnQj77KL",
+>>>>>>> main
     email: "",
     username: "",
     password: "",
