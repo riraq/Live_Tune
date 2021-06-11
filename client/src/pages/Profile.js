@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import Header from "../components/Header";
 import Bio from "../components/Bio";
 import Card from "../components/Card";
+import Nav from "../components/Nav"
 import UserContext from "../utils/UserContext"
 import { Link } from "react-router-dom";
 
@@ -11,7 +12,7 @@ function Profile() {
   const { events } = useContext(UserContext)
 
   useEffect(() => {
-    setEvents({events});
+    setEvents({ events });
     console.log("eventsState", eventsState)
     console.log(events)
   }, []);
@@ -24,12 +25,13 @@ function Profile() {
 
   return (
     <div>
+      <Nav />
       <div className="container">
         <button onClick={consoleClick}>Console</button>
         <Header />
-        <Link to={"/explore"}>
+        {/* <Link to={"/explore"}>
           <button><strong>Explore Page</strong></button>
-        </Link>
+        </Link> */}
         <Bio />
         <div>
           {events.length ? (

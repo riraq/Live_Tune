@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import API from "../utils/API";
 import CardWrapper from "../components/CardWrapper";
-import Card from "../components/Card"
+import Card from "../components/Card";
+import Nav from "../components/Nav";
 import { Search, SearchBtn } from "../components/Search";
 import { Link } from "react-router-dom";
 
@@ -29,11 +30,12 @@ function Explore() {
 
   return (
     <div>
+      <Nav />
       <div className="text-center">
         <h1>Explore</h1>
-        <Link to={"/profile"}>
+        {/* <Link to={"/profile"}>
           <button><strong>Profile Page</strong></button>
-        </Link>
+        </Link> */}
         <form className="form-group">
           <Search
             onChange={handleInputChange}
