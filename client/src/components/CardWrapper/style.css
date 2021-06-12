@@ -45,3 +45,17 @@ li:last-child {
   margin-top: 12px;
   height: 300px;
 }
+
+.Card-Image{
+  width: 350px;
+}
+
+
+
+.Card{
+  border: blueviolet solid 2px;
+  height: 400px;
+  width: fit-content;
+  margin: 50px;
+  
+}
