@@ -29,15 +29,10 @@ module.exports = {
 
   findUser: function (req, res) {
     db.User
-      .find({ email: req.params.email })
-      .then(dbModel => {
-        res.json(dbModel);
-      })
-      .catch(err => {
-        res.status(422).json(err);
-      });
+      .find({ email: req.user.email })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
   },
-
 
   register: function (req, res) {
     db.User

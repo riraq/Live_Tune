@@ -5,10 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { StoreProvider } from "./store";
 
 ReactDOM.render(
-  <React.StrictMode>
       <StoreProvider>
           <App />
-      </StoreProvider>
-  </React.StrictMode>,
+      </StoreProvider>,
   document.getElementById('root')
 );
