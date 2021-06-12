@@ -1,21 +1,19 @@
-import React, { useState, useEffect } from "react";
-import API from "./utils/API";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Explore from "./pages/Explore";
 import Event from "./pages/Event";
 import UserContext from "./utils/UserContext";
-import { Frame, Scroll, useCycle } from "framer"
+// import { Frame, Scroll, useCycle } from "framer"
 import "./index.css"
-
+import { StoreProvider } from "./store";
 
 function App() {
   const [userState, setUserState] = useState({
-    _id: "vvG1zZpnQj77KL",
+    _id: "",
     email: "",
     username: "",
-    password: "",
     bio: "",
     events: [{
       id: "",
@@ -25,37 +23,23 @@ function App() {
       date: "",
     }],
   })
-
-  useEffect(() => {
-    loadUser()
-    console.log("userState", userState)
-}, []);
-
-  function loadUser() {
-    API.getUser(userState._id)
-      .then((res) => {
-        setUserState(res.data);
-      })
-      .catch(err => console.log(err));
+  
+  function loginState(state) {
+    setUserState({state});
   }
+
   return (
     <Router>
       <div className="container main">
         <Switch>
-          <Route exact path="/">
-            <Login />
-          </Route>
-          <UserContext.Provider value={userState}>
-            <Route exact path="/profile">
-              <Profile />
-            </Route>
-              <Route exact path="/explore">
-                <Explore />
-              </Route>
-              <Route exact path="/events/:id">
-                <Event />
-              </Route>
-          </UserContext.Provider>
+          <StoreProvider>
+            <UserContext.Provider value={{ userState, loginState }}>
+              <Route exact path="/" component={Login} />
+              <Route exact path="/profile" component={Profile} />
+              <Route exact path="/explore" component={Explore} />
+              <Route exact path="/events/:id" component={Event} />
+            </UserContext.Provider>
+          </StoreProvider>
         </Switch>
       </div>
     </Router>

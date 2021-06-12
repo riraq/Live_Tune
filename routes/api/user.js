@@ -4,9 +4,13 @@ const userController = require('../../controllers/userController');
 // Matches with "/api/user"
 router
   .route('/')
-  // .get(userController.eventSearch)
-  // .get(eventsController.findAll)
   .post(userController.update);
+// .get(userController.eventSearch)
+
+// Matches with "/api/user/:email"
+router
+  .route('/:email')
+  .get(userController.findUser);
 
 // Matches with "/api/users/:id"
 router

@@ -1,7 +1,7 @@
 
 import Card from "../Card"
 import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState } from "react";
 import "./style.css"
 
 
