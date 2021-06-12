@@ -1,14 +1,13 @@
 
 import Card from "../Card"
-import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
+/* import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion"; */
 import React, { useState } from "react";
 import "./style.css"
 
 
 function CardWrapper(props) {
 
-
-
+/* 
 function Item() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -40,7 +39,7 @@ function Content() {
       />
     </motion.div>
   );
-}
+} */
 
 const items = [0, 1, 2];
 
@@ -48,7 +47,7 @@ const items = [0, 1, 2];
   return (
     <div>
 
-<AnimateSharedLayout>
+{/* <AnimateSharedLayout>
       <motion.ul layout initial={{ borderRadius: 25 }}>
         {items.map(item => (
           <Item key={item} />
@@ -56,6 +55,16 @@ const items = [0, 1, 2];
       </motion.ul>
     </AnimateSharedLayout>
      
+ */}
+
+    <Card
+              key={props.id}
+              id={props.id}
+              name={props.name}
+              date={props.date}
+              image={props.image}
+              url={props.url}
+      />
     </div>
   );
 }
