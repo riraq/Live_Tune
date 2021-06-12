@@ -1,21 +1,11 @@
-import React, { useState, useEffect } from "react"
-import API from "../../utils/API"
+import React from "react"
 
-function Header() {
-  const [usernameState, setusernameState] = useState("");
-
-  useEffect(() => {
-    API.getUser()
-      .then((userInfo) => {
-        setusernameState(userInfo.data[0].username)
-      })
-      .catch((err) => console.log("Get user info error: " + err));
-  }, []);
+function Header(props) {
 
   return (
     <div className="jumbotron text-center" style={{ height: 100, clear: "both", paddingTop: 50, textAlign: "center", marginBottom: "2rem", backgroundImage: `url("")`, backgroundBlendMode: "hard-light" }}>
       <div className="container text-dark">
-        <h1>{usernameState}</h1>
+        <h1>{props.username}</h1>
       </div>
     </div>
   );

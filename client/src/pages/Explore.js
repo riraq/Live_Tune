@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import API from "../utils/API";
-import CardWrapper from "../components/CardWrapper";
 import Card from "../components/Card";
 import Nav from "../components/Nav";
 import { Search, SearchBtn } from "../components/Search";
@@ -16,7 +15,6 @@ function Explore() {
 
   useEffect(() => {
   }, [])
-
 
   function handleInputChange(event) {
     const { name, value } = event.target;
@@ -76,6 +74,7 @@ function Explore() {
               date={event.dates.start.localDate}
               image={event.images[4].url}
               url={event.url}
+              venueName={event._embedded.venues[0].name}
             >
             </Card>)))
         ) : (

@@ -1,4 +1,4 @@
-import React,{ createContext, useContext, useReducer } from "react";
+import React, { createContext, useContext, useReducer } from "react";
 
 import {
     LOGIN_USER,
@@ -11,35 +11,27 @@ const StoreContext = createContext({
 
 const { Provider } = StoreContext;
 
-const reducer = ( state, { type, payload } ) => {
-
-    switch( type ) {
+const reducer = (state, { type, payload }) => {
+    switch (type) {
         case LOGIN_USER:
-
             return { ...state, userAuth: payload };
 
         case LOGOUT_USER:
-
             return { ...state, userAuth: {} };
 
         default:
             return state;
     }
-
 }
 
-export const StoreProvider = ( { children } ) => {
-
-    const [ store, dispatch ] = useReducer( reducer, {
+export const StoreProvider = ({ children }) => {
+    const [store, dispatch] = useReducer(reducer, {
         userAuth: {}
-    } );
+    });
 
-    return <Provider value={[store, dispatch]}>{ children }</Provider>
-
+    return <Provider value={[store, dispatch]}>{children}</Provider>
 }
 
 export const useStoreContext = () => {
-
-    return useContext( StoreContext );
-
+    return useContext(StoreContext);
 }
