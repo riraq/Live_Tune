@@ -8,7 +8,6 @@ import "./style.css"
 function CardWrapper(props) {
 
 /* 
-
 function Item() {
   const [isOpen, setIsOpen] = useState(false);
 

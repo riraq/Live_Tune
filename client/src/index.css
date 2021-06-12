@@ -37,6 +37,26 @@
     z-index: 2;
     backdrop-filter: blur(2rem);
   }
+  .main-wrapper{
+    
+      height: 80%;
+      width: 80%;
+      min-height: 55rem;
+      margin-top: 3rem;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(
+        to right bottom,
+        rgba(255, 255, 255, 0.7),
+        rgba(255, 255, 255, 0.3)
+      );
+      border-radius: 2rem;
+      z-index: 2;
+      backdrop-filter: blur(2rem);
+    
+  }
+
 
   h1{
     font-size: 5rem;
