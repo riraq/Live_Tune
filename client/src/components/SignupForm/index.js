@@ -24,6 +24,7 @@ function SignUp() {
 
       // User has been successfully registered, now log them in with the same information.
       await login({ email, username, password });
+      window.location.href = "/profile";
 
       // User has been successfully registered, logged in and added to state. Perform any additional actions you need here such as redirecting to a new page.
     } catch (err) {
