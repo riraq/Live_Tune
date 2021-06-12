@@ -1,27 +1,27 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-const util = require("util");
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const util = require('util');
 
-const passwordHash = require("../config/passwordHash");
+const passwordHash = require('../config/passwordHash');
 
 // Get middleware
-const authenticateUser = require("./middleware/authenticateUser");
-const validateBodyWith = require("./middleware/validateBodyWith");
+const authenticateUser = require('./middleware/authenticateUser');
+const validateBodyWith = require('./middleware/validateBodyWith');
 
 // Data validators
-const { loginValidator, registerValidator } = require("./validation");
+const { loginValidator, registerValidator } = require('./validation');
 
 // Load User model
-const { User } = require("../models");
+const { User } = require('../models');
 
-const jwtSign = util.promisify( jwt.sign );
+const jwtSign = util.promisify(jwt.sign);
 
 // Get the currently authenticated user
-router.post("/authenticated", authenticateUser, (req, res) => {
+router.post('/authenticated', authenticateUser, (req, res) => {
 
-  res.json( req.user );
+  res.json(req.user);
 
 });
 
@@ -29,8 +29,7 @@ router.post("/authenticated", authenticateUser, (req, res) => {
  * Log in an existing user by signing and returning a secure JWT token
  * for the client application to store and include with requests.
  */
-router.post("/login", validateBodyWith( loginValidator ), async (req, res) => {
-
+router.post('/login', validateBodyWith(loginValidator), async (req, res) => {
   const { email, password } = req.body;
 
   try {
@@ -41,7 +40,7 @@ router.post("/login", validateBodyWith( loginValidator ), async (req, res) => {
 
     if (!user) {
       // User not found by email.
-      return res.status(404).json({ default: "Email or password is invalid." });
+      return res.status(404).json({ default: 'Email or password is invalid.' });
     }
 
     const {
@@ -50,11 +49,11 @@ router.post("/login", validateBodyWith( loginValidator ), async (req, res) => {
       ...secureUser
     } = user._doc;
 
-    const isMatch = await bcrypt.compare( password, encryptedPassword );
-    
-    if( !isMatch ) {
+    const isMatch = await bcrypt.compare(password, encryptedPassword);
+
+    if (!isMatch) {
       // User's password is invalid.
-      return res.status(404).json({ default: "Email or password is invalid." });
+      return res.status(404).json({ default: 'Email or password is invalid.' });
     }
 
     const payload = {
@@ -73,16 +72,14 @@ router.post("/login", validateBodyWith( loginValidator ), async (req, res) => {
 
     return res.json({
       success: true,
-      token: "Bearer " + token,
+      token: 'Bearer ' + token,
       user: secureUser
-    })
-  
+    });
 
-  } catch( err ) {
 
+  } catch (err) {
     console.log(err);
-    res.status(500).json({ default: "Something went wrong trying to log in." });
-
+    res.status(500).json({ default: 'Something went wrong trying to log in.' });
   }
 
 });
@@ -90,38 +87,39 @@ router.post("/login", validateBodyWith( loginValidator ), async (req, res) => {
 /**
  * Creates a new user for authentication
  */
-router.post("/register", validateBodyWith( registerValidator ), async (req, res) => {
+router.post('/register', validateBodyWith(registerValidator), async (req, res) => {
 
   try {
+    const { email, username, password } = req.body;
 
-    const { email, password } = req.body;
-
-    const user = await User.findOne({ email });
-
-    if (user) {
+    const userEmail = await User.findOne({ email });
+    const userName = await User.findOne({ username });
+    if (userEmail || userName) {
       // User already exists error.
-      return res.status(400).json({ email: "Email already exists." });
+      return res.status(400).json({ email: 'Email already exists.' });
     }
 
     const newUser = new User({
       email,
-      password: await passwordHash( password )
+      username,
+      password: await passwordHash(password)
     });
 
     await newUser.save();
 
     const {
+      // eslint-disable-next-line no-unused-vars
       password: encryptedPassword,
       // User object without the password
       ...secureUser
     } = newUser._doc;
 
-    res.json( secureUser );
+    res.json(secureUser);
 
-  } catch( err ) {
+  } catch (err) {
 
     console.log(err);
-    res.status(500).json({ default: "Something went wrong creating your account." });
+    res.status(500).json({ default: 'Something went wrong creating your account.' });
 
   }
 

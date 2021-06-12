@@ -5,13 +5,11 @@
     box-sizing: border-box;
   }
 
-
   body {
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-image: url("https://pixabay.com/get/g432929d40d54d9bb88bbfde3f02a21e74917ac0c955d6e4afbfbfdb5b3856a1a381e0b94915ea96650312efa656ad240_1920.jpg");
-    
+    background-image: "concert-5099997_1920.jpg";
 }
 
   .main {
@@ -24,31 +22,27 @@
   }
 
   .main-landing {
-      height: 65vh;
-      width: 100vh;
-      margin-top: 10rem;
+    height: 65vh;
+    width: 100vh;
+    margin-top: 10rem;
     align-items: center;
     justify-content: center;
     text-align: center;
     background: linear-gradient(
-    to right bottom,
-    rgba(255, 255, 255, 0.7),
-    rgba(255, 255, 255, 0.3)
-  );
-  border-radius: 2rem;
-  z-index: 2;
-  backdrop-filter: blur(2rem);
+      to right bottom,
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.3)
+    );
+    border-radius: 2rem;
+    z-index: 2;
+    backdrop-filter: blur(2rem);
   }
-
-  .login{
-  }
-
 
   h1{
-     font-size: 5rem;
+    font-size: 5rem;
     font-family: 'Teko', sans-serif;
     background: -webkit-linear-gradient(rgb(230, 161, 240), rgb(250, 1, 63));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
   }

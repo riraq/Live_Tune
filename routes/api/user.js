@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const userController = require('../../controllers/userController');
+const authenticatedUser = require('../middleware/authenticateUser');
 
 // Matches with "/api/user"
 router
@@ -9,8 +10,8 @@ router
 
 // Matches with "/api/user/:email"
 router
-  .route('/:email')
-  .get(userController.findUser);
+  .route('/')
+  .get(authenticatedUser, userController.findUser);
 
 // Matches with "/api/users/:id"
 router

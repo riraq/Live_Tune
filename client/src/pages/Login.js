@@ -1,19 +1,15 @@
 import React from "react";
 import LoginForm from "../components/LoginForm";
-import SignUp from "../components/SignupForm"
+import SignUpForm from "../components/SignupForm"
 import "../index.css"
 
 
 function Login() {
 
   return (
-    <div className="container main-landing " >
-
-      <div className="container login">
+    <div className="container main-landing login" >
         <LoginForm />
-        <SignUp />
-      </div>
-
+        <SignUpForm />
     </div>
   )
 }

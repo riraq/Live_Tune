@@ -1,4 +1,4 @@
-const bcrypt = require("bcryptjs");
+const bcrypt = require('bcryptjs');
 const util = require('util');
 
 const genSalt = util.promisify( bcrypt.genSalt );

@@ -21,14 +21,14 @@ class API {
     /**
      * @param {object} userData 
      * @param {String} userData.email
+     * @param {String} userData.username
      * @param {String} userData.password
      * 
      * @returns {Promise}
      */
     register(userData) {
-        return this.axios.post("/api/register", userData);
+        return this.axios.post("/authentication/register", userData);
     }
-
 
     /**
      * @param {object} userData 
@@ -38,19 +38,19 @@ class API {
      * @returns {Promise}
      */
     login(userData) {
-        return this.axios.post("/api/login", userData);
+        return this.axios.post("/authentication/login", userData);
     }
 
     authenticated() {
-        return this.axios.post("/api/authenticated");
+        return this.axios.post("/authentication/authenticated");
     }
 
     getEvents(search) {
         return this.axios.get("/api/events/" + search);
     }
 
-    getUser(email) {
-        return this.axios.get("/api/user/" + email)
+    getUser() {
+        return this.axios.get("/api/user/")
     }
 
     getEvent(id) {

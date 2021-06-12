@@ -1,8 +1,10 @@
-import React, { useRef } from "react"
+import React, { useRef, useState } from "react"
 import { useLogin } from "../../utils/auth"
 import API from "../../utils/API"
 
 function SignUp() {
+  const [registrationErrorMessage, setRegistrationErrorMessage] = useState("");
+  
   const emailRef = useRef();
   const usernameRef = useRef();
   const passwordRef = useRef();
@@ -32,13 +34,11 @@ function SignUp() {
 
   return (
     <div>
-      <div className="row" />
-      <div className="col-md-6" />
-
       <h1 style={{ margin: "1rem" }} >CREATE ACCOUNT!</h1>
 
       <form className="form signup-form" onSubmit={handleSubmit}>
-        
+      {registrationErrorMessage && <h1>{registrationErrorMessage}</h1>}
+
         <div className="form-group">
           <input type="text" className="form-control" ref={emailRef} placeholder="Email" aria-label="email" />
         </div>
@@ -48,7 +48,7 @@ function SignUp() {
         </div>
         
         <div className="form-group">
-          <input type="password" className="form-control" ref={passwordRef} placeholder="Password" aria-label="Password" />
+          <input type="password" className="form-control" ref={passwordRef} placeholder="Password" aria-label="password" />
         </div>
         
         <div className="form-group">

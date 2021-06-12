@@ -1,6 +1,6 @@
 const validation = {
-    loginValidator: require("./loginValidator"),
-    registerValidator: require("./registerValidator")
+  loginValidator: require('./loginValidator'),
+  registerValidator: require('./registerValidator')
 };
 
 module.exports = validation;
