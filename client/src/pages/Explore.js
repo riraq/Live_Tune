@@ -9,6 +9,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
+import Footer from '../components/Footer';
 
 function Explore() {
   const [events, setEvents] = useState({})
@@ -37,9 +38,6 @@ function Explore() {
     <React.Fragment>
     <CssBaseline />
     <Container maxWidth="lg" className="main-wrapper ">
-
-
-
     <Grid container spacing={3}>
         <Grid item xs={12}>
         <Nav />
@@ -84,7 +82,7 @@ function Explore() {
         </Grid> </Grid>
         </Grid>
         <Grid item xs={12}>
-        <h1>FOOTER</h1>
+        <Footer />
         </Grid>
       </Grid>
    

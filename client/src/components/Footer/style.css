@@ -1,0 +1,9 @@
+.footer {
+    padding-top: 275px;
+    font-size: 1rem;
+    font-family: 'Teko', sans-serif;
+    background: -webkit-linear-gradient(rgb(230, 161, 240), rgb(250, 1, 63));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+  }

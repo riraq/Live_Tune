@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import API from "../utils/API";
 import UserContext from "../utils/UserContext"
 import { useHistory } from "react-router-dom";
-
+import Footer from "../components/Footer";
 
 function Event() {
   const [eventDetails, setEvents] = useState({})
@@ -58,6 +58,7 @@ function Event() {
         <Title> {eventDetails.name} </Title>
         <h2>{venueDetails.name}</h2>
         <button onClick={handleEventSave}>Save Event</button>
+        <Footer />
       </div>
     </div>
   )
