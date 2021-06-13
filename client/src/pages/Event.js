@@ -6,7 +6,7 @@ import UserContext from "../utils/UserContext"
 import { useHistory } from "react-router-dom";
 import Footer from "../components/Footer";
 
-function Event() {
+function Event(props) {
   const [eventDetails, setEvents] = useState({})
   const [venueDetails, setVenue] = useState({})
   const [userState, setUserState] = useState({})
@@ -40,12 +40,12 @@ function Event() {
   function handleEventSave(event) {
     event.preventDefault();
     API.saveEvent({
-      _id: _id,
       id: eventDetails.id,
       name: eventDetails.name,
       image: eventDetails.images[0].url,
       link: eventDetails.url,
       date: eventDetails.dates.start.localDate,
+      venueName: venueDetails
     })
       .catch(err => console.log(err));
   }

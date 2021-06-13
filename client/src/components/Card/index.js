@@ -66,8 +66,16 @@ function Card(props) {
       <div className="col-8">
         <p>{props.name}</p>
         <p>{props.date}</p>
+        <p>{props.venue}</p>
         <a href={props.url} target="blank"> Buy Tickets Here!</a>
-        <Link to={"/events/" + props.id}>
+        <Link
+          to={"/events/" + props.id}
+          id={props.id}
+          image={props.image}
+          name={props.name}
+          date={props.date}
+          venue={props.venue}
+        >
           <button><strong>View Details</strong></button>
         </Link>
       </div>

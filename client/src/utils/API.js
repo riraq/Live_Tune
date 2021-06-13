@@ -58,7 +58,7 @@ class API {
     }
 
     saveEvent(eventDetails) {
-        return this.axios.post("/api/user/", eventDetails).then(result => result.data)
+        return this.axios.post("/api/user/", eventDetails)
     }
 
 }
