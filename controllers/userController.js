@@ -9,9 +9,9 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
 
-  update: function (req, res) {
+  update: function ({ user, body}, res) {
     db.User
-      .findByIdAndUpdate({ _id: req.body._id }, { $push: { events: req.body } })
+      .findByIdAndUpdate({ _id: user._id }, { $push: { events: body } })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

@@ -28,8 +28,8 @@ const userSeed = [
         image: 'https://s1.ticketm.net/dam/a/ae2/5beb62d8-2c29-4c5c-aa7d-c7513e229ae2_1340121_CUSTOM.jpg',
         link: 'https://www.ticketmaster.com/east-conf-first-round-gm-6-atlanta-georgia-06-04-2021/event/0E005AA69C1044DF',
         date: '2021-06-04',
-
-      }]
+      }
+    ]
   }];
 
 db.User
