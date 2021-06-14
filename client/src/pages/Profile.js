@@ -31,13 +31,17 @@ function Profile() {
     
  <React.Fragment>
     <CssBaseline />
+    <Container maxWidth="lg" className="nav-wrapper ">
+      <Grid item xs={12}>
+        <Nav />
+        </Grid> 
+        </Container>
+
     <Container maxWidth="lg" className="main-wrapper ">
 
     <Container maxWidth="lg" className="event-wrapper ">
     <Grid container spacing={3}>
-        <Grid item xs={12}>
-        <Nav />
-        </Grid>
+      
 
         <Grid item xs={12}>
         <Header 

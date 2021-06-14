@@ -1,0 +1,27 @@
+.Nav-Grid{
+    margin-top: 2rem;
+    border-radius: 2rem;
+    background: -webkit-linear-gradient(rgb(230, 161, 240), rgb(250, 1, 63));
+
+    height: 5%;
+    width: 60%;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+
+.Nav-Grid a{
+    font-size: 3rem;
+    font-family: 'Teko', sans-serif;
+    color: aliceblue;
+    margin: auto;
+
+  }
+
+.Nav-Grid a:hover{
+    font-size: 3rem;
+    font-family: 'Teko', sans-serif;
+    color: yellow;
+    margin: auto;
+
+  }

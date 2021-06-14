@@ -59,6 +59,17 @@
 
 
 
+  .nav-wrapper{
+    
+    width: 84%;
+    margin-top: 3rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  
+}
+
+
   .event-wrapper{
 
     height: 80%;
