@@ -1,6 +1,6 @@
 import React from "react"
 import { useLogout } from '../../utils/auth';
-// import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -20,16 +20,9 @@ function Nav() {
     setAnchorEl(null);
   };
 
-  const handleExplore = () => {
-    window.location = "/explore"
-  }
-
-  const handleProfile = () => {
-    window.location = "/profile"
-  }
 
   const logout = useLogout();
-  // let history = useHistory();
+  let history = useHistory();
 
   return (
     <div>
@@ -44,9 +37,7 @@ function Nav() {
         onClose={handleClose}
         TransitionComponent={Fade}
       >
-        <MenuItem onClick={handleProfile}>Profile</MenuItem>
-        <MenuItem onClick={handleExplore}>Explore</MenuItem>
-        {/* <MenuItem onClick={() => history.goBack()}>Back</MenuItem> */}
+        <MenuItem onClick={() => history.goBack()}>Back</MenuItem>
         <MenuItem onClick={logout}>Logout</MenuItem>
       </Menu>
     </div>

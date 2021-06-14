@@ -4,7 +4,8 @@ import Nav from "../components/Nav"
 import Header from "../components/Header";
 import Bio from "../components/Bio";
 import Card from "../components/Card";
-import Footer from "../components/Footer"
+import Footer from "../components/Footer";
+
 function Profile() {
   const [usernameState, setUsernameState] = useState("");
   const [bioState, setBioState] = useState("");
@@ -46,12 +47,12 @@ function Profile() {
                 venueName={event.venueName}
               >
               </Card>
-              <Footer />
             ))
           ) : (
             <div></div>
           )
           }
+          <Footer />
         </div>
       </div>
     </div>
