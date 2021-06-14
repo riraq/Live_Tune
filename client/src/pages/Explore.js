@@ -4,8 +4,9 @@ import Card from "../components/Card";
 import Nav from "../components/Nav";
 import { Search, SearchBtn } from "../components/Search";
 import { Link } from "react-router-dom";
+
+
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Footer from '../components/Footer';

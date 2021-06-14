@@ -5,6 +5,13 @@ import Header from "../components/Header";
 import Bio from "../components/Bio";
 import Card from "../components/Card";
 import Footer from "../components/Footer"
+
+
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
+
+
 function Profile() {
   const [usernameState, setUsernameState] = useState("");
   const [bioState, setBioState] = useState("");
@@ -21,19 +28,30 @@ function Profile() {
   }, []);
 
   return (
-    <div>
-      <Nav />
+    
+ <React.Fragment>
+    <CssBaseline />
+    <Container maxWidth="lg" className="main-wrapper ">
 
-      <div className="container">
+    <Container maxWidth="lg" className="event-wrapper ">
+    <Grid container spacing={3}>
+        <Grid item xs={12}>
+        <Nav />
+        </Grid>
 
+        <Grid item xs={12}>
         <Header 
         username={usernameState}
         />
+         </Grid>
 
+
+         <Grid item xs={12}>
         <Bio 
         bio={bioState}/>
+        </Grid>
 
-        <div>
+        <Grid item xs={12}>
           {eventsState.length ? (
             eventsState.map(event => (
               <Card
@@ -46,15 +64,22 @@ function Profile() {
                 venueName={event.venueName}
               >
               </Card>
-              <Footer />
             ))
           ) : (
             <div></div>
           )
           }
-        </div>
-      </div>
-    </div>
+        </Grid>
+      
+  
+    <Grid item xs={12}>
+        <Footer />
+        </Grid>
+      </Grid>
+   
+      </Container>
+    </Container>
+    </React.Fragment>
   )
 }
 

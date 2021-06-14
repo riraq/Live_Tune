@@ -58,6 +58,16 @@
   }
 
 
+
+  .event-wrapper{
+
+    height: 80%;
+    width: 80%;
+    margin: 2rem auto;
+    text-align: center;
+
+  }
+
   h1{
     font-size: 5rem;
     font-family: 'Teko', sans-serif;
