@@ -122,6 +122,25 @@
   }
   
 
+  .Favorites {
+    font-size: 5rem;
+    font-family: 'Teko', sans-serif;
+    background: -webkit-linear-gradient( rgb(243, 239, 3),rgb(9, 231, 20));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: transform .2s; /* Animation */
+  }
+
+  .Favorites:hover {
+    font-size: 5.3rem;
+    font-family: 'Teko', sans-serif;
+    background: -webkit-linear-gradient(rgb(9, 231, 20),rgb(243, 239, 3));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scale(1.3);
+  }
+  
+
 
   .page-title {
     font-size: 6rem;
@@ -134,4 +153,22 @@
     font-size: 6.1rem;
     font-family: 'Teko', sans-serif;
     color: rgb(251, 255, 0);
+}
+
+.Artist-Header{
+  background-image: url({eventDetails.images[0].url});
+  height: 20rem;
+  widows: 100%;
+}
+
+.Back-Button{
+  position: absolute;
+  top: 3rem;
+transition: transform .2s; /* Animation */
+
+}
+
+
+.Back-Button:hover{
+  transform: scale(1.2);
 }
