@@ -45,7 +45,7 @@ function Explore() {
     <Grid container spacing={3}>
       
         <Grid item xs={12}>
-        <h1>Explore</h1>
+        <p className="page-title">LET'S EXPLORE THE CITY!!!</p>
         </Grid>
         <Grid item xs={12}>
         <form className="form-group">
@@ -64,10 +64,10 @@ function Explore() {
         </Grid>
        
 
-    <Grid container spacing={3}>
+    <Grid container spacing={6} >
   
-    <Grid item xs={12}>
-        <Grid item xs={4} >
+    <Grid item xs={12} className="Events">
+        <Grid item xs={4} className="Event-Card">
         {events.length ? (
           (events.map(event => (
             <Card

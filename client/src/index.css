@@ -89,6 +89,15 @@
 
   }
 
+
+  h2{
+    font-size: 4rem;
+    font-family: 'Teko', sans-serif;
+    background: -webkit-linear-gradient( rgb(250, 1, 63),rgb(196, 31, 221));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
   h3{
 
     font-size: 2rem;
@@ -101,3 +110,28 @@
     font-size: 3rem;
     color: rgb(212, 104, 255);
   }
+
+
+
+  h5{
+    font-size: 4rem;
+    font-family: 'Teko', sans-serif;
+    background: -webkit-linear-gradient( rgb(243, 239, 3),rgb(9, 231, 20));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+
+
+  .page-title {
+    font-size: 6rem;
+    font-family: 'Teko', sans-serif;
+    text-transform:uppercase;
+    color: rgb(247, 38, 167);
+}
+
+.page-title:hover {
+    font-size: 6.1rem;
+    font-family: 'Teko', sans-serif;
+    color: rgb(251, 255, 0);
+}
