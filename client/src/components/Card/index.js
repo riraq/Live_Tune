@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Button from '@material-ui/core/Button';
 
 import Container from '@material-ui/core/Container';
 import './style.css'
@@ -50,11 +51,11 @@ function Card(props) {
  <img alt="concert poster" src={props.image} className="Card-Image" />
 
       <div >
-        <p>{props.name}</p>
-        <p>{props.date}</p>
-        <a href={props.url} target="blank"> Buy Tickets Here!</a>
+        <h2>{props.name}</h2>
+        <p className="Date">{props.date}</p>{/* 
+        <a href={props.url} target="blank"> Buy Tickets Here!</a> */}
         <Link to={"/events/" + props.id}>
-          <button><strong>View Details</strong></button>
+          <Button ><h5>View Details</h5></Button>
         </Link>
       </div>
  </Container>

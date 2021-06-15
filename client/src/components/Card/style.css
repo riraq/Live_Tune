@@ -1,15 +1,42 @@
 .Card-Image{
-    max-width: 230px;
+    width: 338px;
 
 }
 
 .Event-Card {
-    width: 10rem;
+    width: 30%rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: auto;
-    grid-gap: 1rem;
-
+    grid-gap: 3rem;
+    
     }
 
+.Card{
+    width: 30%;
+    margin: 2rem;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    transition: transform .2s; /* Animation */
+
+}
+
+.Card:hover{
+   
+  transform: scale(1.1);
     
+
+}
+
+
+.Events{
+    align-items: center;
+    text-align: center;
+    width: 90%;
+    margin: 3rem auto;
+}
+
+.Date{
+    font-family: 'Raleway', sans-serif;;
+    font-size: 1.5rem;
+    color: rgb(104, 0, 145);
+}
