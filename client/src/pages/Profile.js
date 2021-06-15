@@ -4,12 +4,14 @@ import Nav from "../components/Nav"
 import Header from "../components/Header";
 import Bio from "../components/Bio";
 import Card from "../components/Card";
+
 import Footer from "../components/Footer"
 
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
+import Footer from "../components/Footer";
 
 
 function Profile() {
@@ -91,6 +93,9 @@ function Profile() {
       </Container>
     </Container>
     </React.Fragment>
+
+     
+
   )
 }
 
