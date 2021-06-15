@@ -70,15 +70,23 @@ function Event(props) {
     <Grid container spacing={3}>
        
 
-   
-      <button onClick={() => history.goBack()}>Back</button>
     
+      <a onClick={() => history.goBack()}> <img src="https://img.icons8.com/nolan/96/back.png" className="Back-Button"/></a>
+     
 {/* 
      <EventNav /> */}
-        <Title> {eventDetails.name} </Title>
-        <h2>{venueDetails.name}</h2>
-        <button onClick={handleEventSave}>Save Event</button>
+
      
+    <Grid item xs={12} className="Artist-Header">
+        <p className="page-title"> {eventDetails.name} </p>
+        <img className="" src={eventDetails.images}/>
+      
+        </Grid>
+            
+    <Grid item xs={12}>
+        <h2>At the {venueDetails.name}</h2>
+        <a onClick={handleEventSave} className="Favorites"> ADD TO FAVORITES! </a>
+        </Grid>
     <Grid item xs={12}>
         <Footer />
     </Grid>
