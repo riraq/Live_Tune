@@ -17,12 +17,16 @@ import Footer from "../components/Footer";
 function Profile() {
   const [usernameState, setUsernameState] = useState("");
   const [bioState, setBioState] = useState("");
+  const [locationState, setLocationState] = useState("");
+
   const [eventsState, setEventsState] = useState("");
 
   useEffect(() => {
     API.getUser()
       .then(userInfo => {
+        console.log(userInfo)
         setUsernameState(userInfo.data[0].username);
+        setLocationState(userInfo.data[0].location)
         setBioState(userInfo.data[0].bio)
         setEventsState(userInfo.data[0].events)
       })
@@ -59,6 +63,8 @@ function Profile() {
 
          <Grid item xs={12}>
         <Bio 
+        
+        location={locationState}
         bio={bioState}/>
         </Grid>
 

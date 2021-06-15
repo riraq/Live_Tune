@@ -57,6 +57,11 @@ class API {
         return this.axios.get("/api/event/" + id);
     }
 
+    getLocation(bio) {
+        console.log(bio)
+        return this.axios.post("/api/aboutme/", bio);
+    }
+
     saveEvent(eventDetails) {
         return this.axios.post("/api/user/", eventDetails)
     }

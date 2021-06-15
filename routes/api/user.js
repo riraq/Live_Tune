@@ -6,6 +6,11 @@ const authenticatedUser = require('../middleware/authenticateUser');
 router
   .route('/')
   .post(authenticatedUser, userController.update);
+
+
+router
+  .route('/')
+  .post(authenticatedUser, userController.updateLocation);
 // .get(userController.eventSearch)
 
 // Matches with "/api/user/:email"

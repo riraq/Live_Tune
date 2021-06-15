@@ -3,6 +3,7 @@ import React from "react";
 const UserContext = React.createContext({
   email: "",
   username: "",
+  location: "",
   bio: "",
   events: [{ 
     id: "",

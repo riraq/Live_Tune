@@ -51,7 +51,8 @@ function Event(props) {
       date: eventDetails.dates.start.localDate,
       venueName: venueDetails
     })
-      .catch(err => console.log(err));
+    .then(window.location.href = "/profile")
+    .catch(err => console.log(err));
   }
 
 
