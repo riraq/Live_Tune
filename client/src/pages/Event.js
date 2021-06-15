@@ -6,6 +6,11 @@ import UserContext from "../utils/UserContext";
 import Footer from "../components/Footer";
 import EventNav from "../components/EventNav";
 
+import Nav from "../components/Nav";
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
+
 function Event(props) {
   const [eventDetails, setEvents] = useState({})
   const [venueDetails, setVenue] = useState({})
@@ -51,15 +56,44 @@ function Event(props) {
 
 
   return (
+
+    <React.Fragment>
+    <CssBaseline />   
+    <Container maxWidth="lg" className="nav-wrapper ">
+      <Grid item xs={12}>
+        <Nav />
+        </Grid> 
+        </Container>
+    <Container maxWidth="lg" className="main-wrapper ">
+       <Container maxWidth="lg" className="event-wrapper ">
+    <Grid container spacing={3}>
+       
+
+   
+      <button onClick={() => history.goBack()}>Back</button>
+    
+
     <div>
-      <EventNav />
+    //  <EventNav />
       <div className="text-center">
+
         <Title> {eventDetails.name} </Title>
         <h2>{venueDetails.name}</h2>
         <button onClick={handleEventSave}>Save Event</button>
         <Footer />
-      </div>
-    </div>
+     
+
+    <Grid item xs={12}>
+        <Footer />
+        </Grid>
+      </Grid>
+   
+   </Container>
+   
+   
+   </Container>
+      
+    </React.Fragment>
   )
 }
 

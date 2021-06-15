@@ -1,13 +1,23 @@
 import React from "react"
+import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
+import "./style.css"
+
 
 function Header(props) {
 
   return (
-    <div className="jumbotron text-center" style={{ height: 100, clear: "both", paddingTop: 50, textAlign: "center", marginBottom: "2rem", backgroundImage: `url("")`, backgroundBlendMode: "hard-light" }}>
-      <div className="container text-dark">
-        <h1>{props.username}</h1>
-      </div>
-    </div>
+
+    <Container maxWidth="lg" >
+ <Grid item xs={12} >
+    <img className="user-image" src="https://img.icons8.com/nolan/215/day-of-the-dead.png"/>
+    </Grid> 
+    <Grid item xs={12} >
+    <a className="user-title">{props.username}</a>
+      </Grid> 
+      </Container>
+
+ 
   );
 }
 

@@ -6,9 +6,8 @@ function Bio(props) {
 
   return (
     <div>
-      <h4>Location</h4>
+       <h1>ABOUT ME</h1>
       <EditText />
-      About Me
       {props.bio}
       <EditTextarea />
     </div>

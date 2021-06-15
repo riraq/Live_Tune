@@ -4,8 +4,9 @@ import Card from "../components/Card";
 import Nav from "../components/Nav";
 import { Search, SearchBtn } from "../components/Search";
 import { Link } from "react-router-dom";
+
+
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Footer from '../components/Footer';
@@ -35,11 +36,14 @@ function Explore() {
     
     <React.Fragment>
     <CssBaseline />
+    <Container maxWidth="lg" className="nav-wrapper ">
+      <Grid item xs={12}>
+        <Nav />
+        </Grid> 
+        </Container>
     <Container maxWidth="lg" className="main-wrapper ">
     <Grid container spacing={3}>
-        <Grid item xs={12}>
-        <Nav />
-        </Grid>
+      
         <Grid item xs={12}>
         <h1>Explore</h1>
         </Grid>
@@ -61,8 +65,9 @@ function Explore() {
        
 
     <Grid container spacing={3}>
+  
     <Grid item xs={12}>
-        <Grid item xs={3}>
+        <Grid item xs={4} >
         {events.length ? (
           (events.map(event => (
             <Card
@@ -87,6 +92,10 @@ function Explore() {
    
     </Container>
     </React.Fragment>
+
+
+
+
   )
 }
 
