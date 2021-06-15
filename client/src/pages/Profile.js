@@ -5,8 +5,6 @@ import Header from "../components/Header";
 import Bio from "../components/Bio";
 import Card from "../components/Card";
 
-import Footer from "../components/Footer"
-
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
