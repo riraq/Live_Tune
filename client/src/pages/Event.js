@@ -5,7 +5,7 @@ import API from "../utils/API";
 import UserContext from "../utils/UserContext";
 import Footer from "../components/Footer";
 import EventNav from "../components/EventNav";
-
+import { useHistory } from "react-router-dom";
 import Nav from "../components/Nav";
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
@@ -15,7 +15,7 @@ function Event(props) {
   const [eventDetails, setEvents] = useState({})
   const [venueDetails, setVenue] = useState({})
   const [userState, setUserState] = useState({})
-
+  let history = useHistory();
   const { _id } = useContext(UserContext)
   const { id } = useParams()
 
@@ -73,30 +73,22 @@ function Event(props) {
    
       <button onClick={() => history.goBack()}>Back</button>
     
-
-    <div>
-    //  <EventNav />
-      <div className="text-center">
-
+{/* 
+     <EventNav /> */}
         <Title> {eventDetails.name} </Title>
         <h2>{venueDetails.name}</h2>
         <button onClick={handleEventSave}>Save Event</button>
-        <Footer />
      
-
     <Grid item xs={12}>
         <Footer />
-        </Grid>
-      </Grid>
-   
+    </Grid>
+    </Grid>
+
+
    </Container>
-   
-   
    </Container>
-      
     </React.Fragment>
   )
 }
 
 export default Event;
-

@@ -105,5 +105,3 @@ export default Nav
         <MenuItem onClick={logout}>Logout</MenuItem>
       </Menu>
     </div> */}
-  );
-}
