@@ -65,8 +65,9 @@ function Explore() {
        
 
     <Grid container spacing={3}>
+  
     <Grid item xs={12}>
-        <Grid item xs={3}>
+        <Grid item xs={4} >
         {events.length ? (
           (events.map(event => (
             <Card
@@ -91,6 +92,10 @@ function Explore() {
    
     </Container>
     </React.Fragment>
+
+
+
+
   )
 }
 

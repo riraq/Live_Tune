@@ -1,0 +1,15 @@
+.Card-Image{
+    max-width: 230px;
+
+}
+
+.Event-Card {
+    width: 10rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    grid-gap: 1rem;
+
+    }
+
+    

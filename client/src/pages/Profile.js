@@ -37,18 +37,23 @@ function Profile() {
         </Grid> 
         </Container>
 
-    <Container maxWidth="lg" className="main-wrapper ">
+    <Container maxWidth="lg" className="header-wrapper ">
 
     <Container maxWidth="lg" className="event-wrapper ">
     <Grid container spacing={3}>
       
 
-        <Grid item xs={12}>
+        <Grid item xs={12} >
         <Header 
         username={usernameState}
         />
          </Grid>
 
+        <Grid item xs={12} >
+        <img className="location-icon " src="https://img.icons8.com/nolan/66/worldwide-location.png"/>
+        <h4>Location</h4>
+         </Grid>
+        
 
          <Grid item xs={12}>
         <Bio 
@@ -56,6 +61,7 @@ function Profile() {
         </Grid>
 
         <Grid item xs={12}>
+        <Grid item xs={4} className="Event-Card">
           {eventsState.length ? (
             eventsState.map(event => (
               <Card
@@ -73,6 +79,7 @@ function Profile() {
             <div></div>
           )
           }
+        </Grid>
         </Grid>
       
   

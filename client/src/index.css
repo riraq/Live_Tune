@@ -21,6 +21,8 @@
     justify-content: center;
   }
 
+
+  
   .main-landing {
     height: 65vh;
     width: 100vh;
@@ -37,6 +39,9 @@
     z-index: 2;
     backdrop-filter: blur(2rem);
   }
+
+
+
   .main-wrapper{
     
       height: 80%;
@@ -46,11 +51,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      background: linear-gradient(
-        to right bottom,
-        rgba(255, 255, 255, 0.7),
-        rgba(255, 255, 255, 0.3)
-      );
+      background: white;
       border-radius: 2rem;
       z-index: 2;
       backdrop-filter: blur(2rem);
@@ -86,4 +87,17 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
+  }
+
+  h3{
+
+    font-size: 2rem;
+    font-family: 'Teko', sans-serif;
+    color: white;
+
+  }
+
+  h4{ font-family: 'Raleway', sans-serif;;
+    font-size: 3rem;
+    color: rgb(212, 104, 255);
   }
