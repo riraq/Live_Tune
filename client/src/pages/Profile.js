@@ -24,8 +24,8 @@ function Profile() {
       .then(userInfo => {
         console.log(userInfo)
         setUsernameState(userInfo.data[0].username);
-        setLocationState(userInfo.data[0].location)
-        setBioState(userInfo.data[0].bio)
+        setLocationState(userInfo.data[0].aboutme[0].location)
+        setBioState(userInfo.data[0].aboutme[0].bio)
         setEventsState(userInfo.data[0].events)
       })
       .catch(err => console.log("Get user info error: " + err));

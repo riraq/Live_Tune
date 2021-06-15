@@ -17,10 +17,9 @@ function Bio(props) {
 
     API.getLocation({
       bio: bio, 
-      location: location}
-      )
+      location: location})
     .then(() => {
-      return
+      console.log('props', props)
     });
   };
 
