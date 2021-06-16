@@ -189,3 +189,7 @@ textarea:focus, input:focus{
   outline: none;
 }
 
+
+.logo-image{
+max-height: 250px;
+}

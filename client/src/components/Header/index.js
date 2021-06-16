@@ -10,7 +10,7 @@ function Header(props) {
 
     <Container maxWidth="lg" >
  <Grid item xs={12} >
-    <img className="user-image" src="https://img.icons8.com/nolan/215/day-of-the-dead.png"/>
+    <img className="logo-image" src="https://img.icons8.com/nolan/215/day-of-the-dead.png"/>
     </Grid> 
     <Grid item xs={12} >
     <a className="user-title">{props.username}</a>
