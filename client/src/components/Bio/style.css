@@ -1,0 +1,30 @@
+
+
+textarea{ 
+    border: rgb(255, 251, 16) 3px solid;
+    margin: .5rem 2rem 4rem 8rem;
+    background-color: transparent;
+    text-align: center;
+    width: 46rem;
+    font-size: 52px;
+    color: #4cc5f5;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+
+  }
+  
+
+textarea:focus, input:focus{
+    outline: none;
+  }
+
+  .bio-button{
+    margin: 3rem;
+    width: 20rem;
+    height: 3.5rem;
+    background-color: rgb(238, 82, 252);
+    color: white;
+    border: white 1px solid;
+  }
+  

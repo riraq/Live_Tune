@@ -12,6 +12,7 @@ import Grid from '@material-ui/core/Grid';
 import Footer from "../components/Footer";
 
 
+
 function Profile() {
   const [usernameState, setUsernameState] = useState("");
   const [bioState, setBioState] = useState("");
