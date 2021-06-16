@@ -25,6 +25,7 @@ function Explore() {
 
   function handleFormSubmit(event) {
     event.preventDefault();
+    console.log(searchForm);
     if (searchForm.search) {
       API.getEvents(searchForm.search)
         .then(res => setEvents(res.data))
@@ -48,17 +49,18 @@ function Explore() {
         <p className="page-title">LET'S EXPLORE THE CITY!!!</p>
         </Grid>
         <Grid item xs={12}>
-        <form className="form-group">
+        <form className="form-group search-form">
           <Search
             onChange={handleInputChange}
+            className="search-box"
             name="search"
-            placeholder="Search for an Event"
+            placeholder="Search Location"
           />
           <SearchBtn
             disabled={!(searchForm.search)}
             onClick={handleFormSubmit}
           >
-            Find Events
+           FIND EVENTS
           </SearchBtn>
         </form>
         </Grid>

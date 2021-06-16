@@ -156,7 +156,6 @@
 }
 
 .Artist-Header{
-  background-image: url({eventDetails.images[0].url});
   height: 20rem;
   widows: 100%;
 }
@@ -164,11 +163,28 @@
 .Back-Button{
   position: absolute;
   top: 3rem;
+  left: -7rem;
 transition: transform .2s; /* Animation */
 
 }
 
-
 .Back-Button:hover{
   transform: scale(1.2);
 }
+
+.video-item {
+  display: flex !important;
+  align-items: center !important;
+  cursor: pointer;
+}
+
+.video-item.item img {
+  max-width: 200px;
+  max-height: 250px ;
+}
+
+
+textarea:focus, input:focus{
+  outline: none;
+}
+

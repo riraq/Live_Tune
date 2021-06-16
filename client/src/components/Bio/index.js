@@ -2,7 +2,8 @@ import React, { useRef } from "react";
 import { EditText, EditTextarea } from 'react-edit-text';
 import 'react-edit-text/dist/index.css';
 import API from '../../utils/API';
-
+import Grid from '@material-ui/core/Grid';
+import './style.css';
 
 function Bio(props) {
 
@@ -26,13 +27,19 @@ function Bio(props) {
 
   return (
     <div>
+      
+       
       <form className="form" onSubmit={handleSubmit}>
-      <h4>Location</h4>
-      <textarea placeholder={props.location} ref={locationRef}></textarea>
-      About Me
+      <img className="location-icon " src="https://img.icons8.com/nolan/66/worldwide-location.png"/>
+      <h3>Location</h3>
+      <textarea className="bio-textarea" placeholder={props.location} ref={locationRef}></textarea>
+      <br></br>
+      <h3>About Me</h3>
       <textarea placeholder={props.bio}ref={bioRef} ></textarea>
-      <button className="btn btn-dark" type="submit">save</button>
+      <br></br>
+      <button className="btn btn-dark bio-button" type="submit">save</button>
       </form>
+    
     </div>
   );
 }

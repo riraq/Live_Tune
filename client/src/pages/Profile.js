@@ -12,6 +12,7 @@ import Grid from '@material-ui/core/Grid';
 import Footer from "../components/Footer";
 
 
+
 function Profile() {
   const [usernameState, setUsernameState] = useState("");
   const [bioState, setBioState] = useState("");
@@ -52,12 +53,6 @@ function Profile() {
         username={usernameState}
         />
          </Grid>
-
-        <Grid item xs={12} >
-        <img className="location-icon " src="https://img.icons8.com/nolan/66/worldwide-location.png"/>
-        <h4>Location</h4>
-         </Grid>
-        
 
          <Grid item xs={12}>
         <Bio 

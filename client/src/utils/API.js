@@ -46,7 +46,7 @@ class API {
     }
 
     getEvents(search) {
-        return this.axios.get("/api/events/" + search);
+        return this.axios.get("/api/events/"  + search);
     }
 
     getUser() {
