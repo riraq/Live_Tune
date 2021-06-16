@@ -29,11 +29,11 @@ function Nav() {
   };
 
   const handleExplore = () => {
-    window.location = "/explore"
+    window.location.href = "/explore"
   }
 
   const handleProfile = () => {
-    window.location = "/profile"
+    window.location.href = "/profile"
   }
 
   const logout = useLogout();
