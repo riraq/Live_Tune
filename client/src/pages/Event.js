@@ -65,11 +65,7 @@ const handleVideoSelect = (video) => {
   function loadEvent() {
     API.getEvent(id)
       .then(res => {
-        console.log('res.data', res.data)
-        setEvents(res.data);
-        setEvents(...eventDetails, {
-          image: res.data.images[0].url
-        })
+        setEvents({...res.data, image: res.data.images[0].url});
         setVenue(res.data._embedded.venues[0])
       })
       .then(console.log('images', eventDetails))
@@ -96,9 +92,10 @@ const handleVideoSelect = (video) => {
       date: eventDetails.dates.start.localDate,
       venueName: venueDetails
     })
-    .then(window.location.href = "/profile")
-    .catch(err => console.log(err));
+      .then(window.location.href = "/profile")
+      .catch(err => console.log(err));
   }
+
  
   return (
 
@@ -148,11 +145,15 @@ const handleVideoSelect = (video) => {
                 </div>
             </div> */}
     </Grid>
-    </Grid>
+  
 
+            <Grid item xs={12}>
+              <Footer />
+            </Grid>
+          </Grid>
 
-   </Container>
-   </Container>
+        </Container>
+      </Container>
     </React.Fragment>
   )
 }

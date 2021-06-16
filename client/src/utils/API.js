@@ -58,7 +58,6 @@ class API {
     }
 
     getLocation(bio) {
-        console.log(bio)
         return this.axios.post("/api/aboutme/", bio);
     }
 
