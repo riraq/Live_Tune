@@ -1,5 +1,7 @@
 import React, { useContext } from "react"
 import "./style.css"
+import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
 
 function Footer(){
   return (
