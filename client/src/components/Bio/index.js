@@ -17,12 +17,10 @@ function Bio(props) {
 
 
     API.getLocation({
-      bio: bio, 
-      location: location}
-      )
-    .then(() => {
-      return
-    });
+      bio: bio,
+      location: location
+    })
+      .then(() => { window.location.href = "/profile" });
   };
 
   return (
@@ -30,6 +28,7 @@ function Bio(props) {
       
        
       <form className="form" onSubmit={handleSubmit}>
+
       <img className="location-icon " src="https://img.icons8.com/nolan/66/worldwide-location.png"/>
       <h3>Location</h3>
       <textarea className="bio-textarea" placeholder={props.location} ref={locationRef}></textarea>
@@ -38,6 +37,9 @@ function Bio(props) {
       <textarea placeholder={props.bio}ref={bioRef} ></textarea>
       <br></br>
       <button className="btn btn-dark bio-button" type="submit">save</button>
+
+
+
       </form>
     
     </div>
