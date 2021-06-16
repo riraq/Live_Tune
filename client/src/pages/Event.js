@@ -27,7 +27,7 @@ function Event(props) {
   function loadEvent() {
     API.getEvent(id)
       .then(res => {
-        setEvents(res.data);
+        setEvents({...res.data, image: res.data.images[0].url});
         setVenue(res.data._embedded.venues[0])
       })
       .catch(err => console.log(err));
@@ -51,50 +51,45 @@ function Event(props) {
       date: eventDetails.dates.start.localDate,
       venueName: venueDetails
     })
-    .then(window.location.href = "/profile")
-    .catch(err => console.log(err));
+      .then(window.location.href = "/profile")
+      .catch(err => console.log(err));
   }
-
 
   return (
 
     <React.Fragment>
-    <CssBaseline />   
-    <Container maxWidth="lg" className="nav-wrapper ">
-      <Grid item xs={12}>
-        <Nav />
-        </Grid> 
-        </Container>
-    <Container maxWidth="lg" className="main-wrapper ">
-       <Container maxWidth="lg" className="event-wrapper ">
-    <Grid container spacing={3}>
-       
+      <CssBaseline />
+      <Container maxWidth="lg" className="nav-wrapper ">
+        <Grid item xs={12}>
+          <Nav />
+        </Grid>
+      </Container>
+      <Container maxWidth="lg" className="main-wrapper ">
+        <Container maxWidth="lg" className="event-wrapper ">
+          <Grid container spacing={3}>
 
-    
-      <a onClick={() => history.goBack()}> <img src="https://img.icons8.com/nolan/96/back.png" className="Back-Button"/></a>
-     
-{/* 
+            <a onClick={() => history.goBack()}> <img src="https://img.icons8.com/nolan/96/back.png" className="Back-Button" /></a>
+
+            {/* 
      <EventNav /> */}
 
-     
-    <Grid item xs={12} className="Artist-Header">
-        <p className="page-title"> {eventDetails.name} </p>
-        <img className="" src={eventDetails.images}/>
-      
-        </Grid>
-            
-    <Grid item xs={12}>
-        <h2>At the {venueDetails.name}</h2>
-        <a onClick={handleEventSave} className="Favorites"> ADD TO FAVORITES! </a>
-        </Grid>
-    <Grid item xs={12}>
-        <Footer />
-    </Grid>
-    </Grid>
+            <Grid item xs={12} className="Artist-Header">
+              <p className="page-title"> {eventDetails.name} </p>
+              <img alt="artist" src={eventDetails.image} />
 
+            </Grid>
 
-   </Container>
-   </Container>
+            <Grid item xs={12}>
+              <h2>At the {venueDetails.name}</h2>
+              <a onClick={handleEventSave} className="Favorites"> ADD TO FAVORITES! </a>
+            </Grid>
+            <Grid item xs={12}>
+              <Footer />
+            </Grid>
+          </Grid>
+
+        </Container>
+      </Container>
     </React.Fragment>
   )
 }

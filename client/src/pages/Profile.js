@@ -26,7 +26,6 @@ function Profile() {
   const bioRefresh = () => {
     API.getUser()
       .then(userInfo => {
-        console.log(userInfo)
         setUsernameState(userInfo.data[0].username);
         setLocationState(userInfo.data[0].aboutme.slice(-1)[0].location)
         setBioState(userInfo.data[0].aboutme.slice(-1)[0].bio)

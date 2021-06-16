@@ -156,7 +156,7 @@
 }
 
 .Artist-Header{
-  background-image: url({eventDetails.images[0].url});
+  background-image: url();
   height: 20rem;
   widows: 100%;
 }
